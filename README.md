@@ -21,5 +21,3 @@ Projektā tiek izmantots:
 
 ## Uzstādīšanas instrukcijas
 Lai piekļūtu pie strādājoša projekta sekojiet saitei: [Kad tiks izveidots kvalifikācijas darba projekts, tas tiks izvietots uz bezmaksas hostinga un būs pieejams ikvienam]
-
-Saite uz mājaslapas dizainu: https://www.figma.com/file/9RPfrg4ZsvMJpyRFtnGZoc/The-Glow-Light?node-id=0%3A1
