@@ -1,4 +1,4 @@
-# Mājaslapa uzņēmumam "The Glow Light"
+# Datu uzskaites un apstrādes automatizētā sistēma uzņēmuma pakalpojumu prezentēšanai un pārdošanai
 
 ## Projekta apraksts
 Šis ir projekts PIKC "Rīgas Valsts tehnikums" kvalifikācijas darbam. Kvalifikācijas darba projekts tiks veidots atsevišķi no reālā projekta tā autoram pielietojot "full stack" programmēšanas prasmes kvalifikācijas darpa izpildei izmantojot savas HTML;CSS;PHP;SQL zināšanas, kamēr reālais projekts tiks veikts paralēli, izmantojot wordpress. Projekta mērķis ir izveidot uzēmumam "The Glow Light", kas nodarbojas ar mašīnu kosmētikas darbiem mājaslapu, kura reklamēs un prezentēs uzņēmuma darbību vienlaicīgi ļaujot lietotājiem veikt pieteikšanos uz pakalpojumiem caur mājaslapu un dodot iespēju lietotājiem atstāt atsauksmes par gūtajiem pakalpojumiem.
