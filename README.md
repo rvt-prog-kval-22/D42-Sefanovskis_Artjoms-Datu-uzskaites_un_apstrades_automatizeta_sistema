@@ -5,7 +5,7 @@
 
 ## Izmantotās tehnoloģijas
 Projektā tiek izmantots:
-- Figma (dizaina izveidei)
+- Javascript
 - HTML
 - CSS
 - PHP
