@@ -5,7 +5,6 @@
 
 ## Izmantotās tehnoloģijas
 Projektā tiek izmantots:
-- Figma (dizaina izveidei)
 - HTML
 - CSS
 - PHP
@@ -15,7 +14,8 @@ Projektā tiek izmantots:
 [W3School](https://www.w3schools.com/html/default.asp) - tika ņemts example html kods.
 
 [udemy](udemy.com) - tiks izmantots, kā galvenais zināšanu avots par tehnoloģijām.
- 1. [Izmantotie kursi Web Dizaina apgūšanai](https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/)
+ 1. [Build Responsive Real-World Websites with HTML and CSS](https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/) - Izmantotie kursi Web Dizaina apgūšanai
+ 2. [PHP for Beginners - Become a PHP Master - CMS Project](https://www.udemy.com/course/php-for-complete-beginners-includes-msql-object-oriented/) - Izmantotie kursi PHP apgūšanai
 
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web) - tiks izmantots dokumentācijas apskatei
 
