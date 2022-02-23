@@ -1,0 +1,65 @@
+.main {
+  padding: 4.8rem 1.8rem 9.6rem 1.8rem;
+  overflow-x: auto;
+}
+
+.where-box {
+  display: flex;
+  gap: 1.8rem;
+  margin-bottom: 3.2rem;
+  justify-content: right;
+}
+
+.where-btn:link,
+.where-btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: #555 3px solid;
+  padding: 0.9rem 1.8rem;
+}
+
+.where-btn:hover,
+.where-btn:active {
+  background-color: #555;
+  color: #f3f3f3;
+}
+
+.users-table {
+  font-size: 1.2rem;
+  text-align: center;
+  vertical-align: center;
+  border-collapse: collapse;
+}
+
+.users-table th {
+  height: 2.4rem;
+  padding: 1rem;
+}
+
+.users-table td {
+  height: 5.6rem;
+  padding: 1rem;
+}
+
+.users-table td:nth-child(2) {
+  width: 7.5rem;
+}
+
+.users-table tbody tr:nth-child(odd) {
+  background-color: #dfdfdf;
+}
+
+.users-table a:link,
+.users-table a:visited {
+  text-decoration: none;
+  color: #e43314;
+}
+
+.users-table a:hover,
+.users-table a:active {
+  color: #555;
+}

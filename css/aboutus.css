@@ -1,0 +1,47 @@
+.about-section {
+  padding: 4.8rem 0;
+}
+
+.about-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+}
+
+.about-img1 {
+  height: 35rem;
+}
+
+.contact-heading {
+  margin-bottom: 1.6rem;
+}
+
+.about-map {
+  height: 35rem;
+  width: 100%;
+}
+
+.about-work-hours {
+  display: flex;
+  column-gap: 1.2rem;
+  align-items: center;
+}
+
+.about-contact-info {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.work-hours {
+  text-align: center;
+  width: 15rem;
+  font-weight: 600;
+}
+
+.work-hours th {
+  color: #e43314;
+}
+
+.work-hours tr {
+  height: 2.5rem;
+}

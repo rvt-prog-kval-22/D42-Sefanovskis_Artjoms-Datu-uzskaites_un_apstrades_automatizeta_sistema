@@ -1,0 +1,41 @@
+.item-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 3.2rem;
+  padding: 4.8rem 0;
+  padding-bottom: 9.6rem;
+}
+
+.item-box {
+  border: 1px #d3ced2 solid;
+  padding: 1.8rem 1.8rem;
+}
+
+.item-box:hover {
+  box-shadow: 0 0 10px 4px #d3ced2;
+}
+
+.item-img {
+  width: 100%;
+}
+
+.item-rating-box i {
+  color: #ffa600;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.8rem 0;
+}
+
+.item-name-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-name {
+  font-size: 2.4rem;
+}

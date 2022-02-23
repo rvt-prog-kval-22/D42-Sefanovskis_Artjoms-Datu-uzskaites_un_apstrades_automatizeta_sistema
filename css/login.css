@@ -1,0 +1,42 @@
+.login-heading {
+  margin-top: 3.2rem;
+  margin-bottom: 1.6rem;
+  font-size: 4.8rem;
+}
+
+.login-box {
+  padding: 3.2rem 3.2rem;
+  border: 1px #d3ced2 solid;
+  border-radius: 10px;
+}
+
+.register-container {
+  padding-bottom: 9.6rem;
+}
+
+.inputfield {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 1.6rem;
+}
+
+.inputfield:focus {
+  outline: none;
+}
+
+.login-label {
+  display: inline-block;
+}
+
+.login-button-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-to-register:link,
+.link-to-register:visited {
+  color: #e43314;
+  font-size: 1.8rem;
+}

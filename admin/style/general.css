@@ -1,0 +1,61 @@
+/* Page general styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  background-color: #f3f3f3;
+  position: relative;
+  min-height: 100vh;
+}
+
+.text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #5b5b5b;
+}
+
+.page {
+  max-width: 120rem;
+  margin: 0 auto 9.6rem auto;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+}
+
+.btn--cta,
+.btn--cta:link,
+.btn--cta:visited {
+  font-family: "Oswald", sans-serif;
+  display: inline-block;
+  color: #fff;
+  background-color: #e43314;
+  font-size: 1.6rem;
+  text-decoration: none;
+  padding: 1.2rem 2.4rem;
+  border-radius: 100px;
+  text-align: center;
+  border: #e43314 solid 1px;
+}
+
+.btn--cta:hover,
+.btn--cta:active {
+  color: #e43314;
+  background-color: #fff;
+}
+
+.btn--cta i {
+  padding-right: 1.2rem;
+  font-size: 1.8rem;
+}

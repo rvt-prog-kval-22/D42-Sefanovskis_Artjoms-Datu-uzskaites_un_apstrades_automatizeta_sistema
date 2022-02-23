@@ -1,0 +1,136 @@
+.profile-main {
+  margin: 1.8rem auto;
+  padding-bottom: 9.6rem;
+  display: flex;
+  gap: 2.4rem;
+}
+.profile-menu-list {
+  list-style: none;
+  border-right: 1px solid #bbb;
+  width: max-content;
+}
+
+.profile-menu-item {
+  font-size: 1.6rem;
+  border-bottom: 1px solid #bbb;
+  padding: 1.6rem;
+  margin-right: 1rem;
+  font-weight: 400;
+}
+.profile-menu-item:last-child {
+  border-bottom: none;
+}
+
+.profile-menu-link:link,
+.profile-menu-link:visited {
+  text-decoration: none;
+  color: #a2a2a2;
+}
+
+.profile-menu-link:hover,
+.profile-menu-link:active {
+  color: #e43314;
+}
+
+.profile-box {
+  width: 100%;
+}
+
+/* Profile Information */
+
+.profile-header-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3.2rem;
+}
+
+.profile-heading {
+  font-size: 3.2rem;
+  color: #1a1a1a;
+}
+
+.profile-header-line {
+  display: inline-block;
+  border-top: 5px solid #e43314;
+  width: 5rem;
+}
+
+.user-data-box {
+  font-size: 1.8rem;
+  width: 100%;
+}
+.user-data-box tr td {
+  padding-bottom: 3.2rem;
+}
+
+.user-data-label {
+  width: 12rem;
+}
+
+.covered-password-box {
+  display: inline-block;
+  background-color: #555;
+  height: 1.8rem;
+  width: 15rem;
+}
+
+.user-data-input {
+  width: 100%;
+  height: 2.4rem;
+}
+
+.user-data-input-textfield {
+  width: 100%;
+  min-height: 6.4rem;
+}
+
+.user-data-input:focus,
+.user-data-input-textfield:focus {
+  outline: none;
+}
+
+.update-profile-btn-box {
+  text-align: center;
+}
+
+.update-profile-btn-box button {
+  font-family: "Oswald";
+}
+
+/* Cars Section */
+
+.users-table {
+  font-size: 1.2rem;
+  text-align: center;
+  vertical-align: center;
+  border-collapse: collapse;
+}
+
+.users-table th {
+  height: 2.4rem;
+  padding: 1rem;
+}
+
+.users-table td {
+  height: 5.6rem;
+  padding: 1rem;
+}
+
+.users-table td:nth-child(2) {
+  width: 7.5rem;
+}
+
+.users-table tbody tr:nth-child(odd) {
+  background-color: #dfdfdf;
+}
+
+.users-table a:link,
+.users-table a:visited {
+  text-decoration: none;
+  color: #e43314;
+}
+
+.users-table a:hover,
+.users-table a:active {
+  color: #555;
+}

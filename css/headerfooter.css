@@ -1,0 +1,135 @@
+/* ******************** */
+/* Header */
+/* ******************** */
+
+.head-container {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  padding: 3.2rem 0;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  max-width: 130rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #e43314;
+  font-size: 3.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+h1:hover {
+  text-shadow: 0 0 5px #e43314;
+}
+
+.site-description {
+  text-transform: uppercase;
+  color: #e43314;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.head-info {
+  display: flex;
+  gap: 6.4rem;
+}
+
+.head-info-container {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.head-info-container i {
+  font-size: 2.4rem;
+  display: block;
+  background-color: #e43314;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 1.8rem;
+}
+
+.head-info-heading {
+  color: #e43314;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.head-info-content {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* ******************** */
+/* Navigation */
+/* ******************** */
+
+.main-nav {
+  border-bottom: 1px solid #afafaf;
+}
+
+.main-nav-list {
+  max-width: 120rem;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  gap: 1.6rem;
+  justify-content: left;
+  padding: 1.6rem 3.2rem;
+  position: relative;
+}
+
+.main-nav-link-last {
+  position: absolute;
+  right: 3.2rem;
+}
+
+.main-nav-link-on {
+  display: inline-block;
+}
+
+.main-nav-link-off {
+  display: none;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  color: #a2a2a2;
+  font-size: 1.6rem;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #e43314;
+}
+
+/* ******************** */
+/* Footer */
+/* ******************** */
+.footer-div {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.copyright {
+  background-color: #000;
+  color: #e6e6e6 !important;
+  text-align: center;
+  padding: 1.2rem 0;
+}
