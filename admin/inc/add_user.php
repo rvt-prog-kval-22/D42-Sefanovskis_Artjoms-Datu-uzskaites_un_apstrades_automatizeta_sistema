@@ -18,15 +18,18 @@
     else {
       header('Location: admin-users.php');
     }
-  }
+  } 
   ?>
-
-<div class="create-button-box">
-  <a href="admin-users.php" class="btn--cta services-create-btn">
-  <i class="fas fa-angle-right"></i>
-    <span>Back</span>
-  </a>
-</div>
+  <div class="page-header-box">
+    <div>
+      <h2 class="page-heading">Create user</h2>
+      <span class="page-heading-line"></span>
+    </div>
+    <a href="admin-users.php" class="btn--cta services-create-btn">
+      <i class="fas fa-angle-right"></i>
+      <span>Back</span>
+    </a>
+  </div>
 
 <form action="" method="post">
   
@@ -48,8 +51,11 @@
   <label class="input-label" for="user_password">Password</label>
   <input type="text" name="user_password" class="text input-field">
 
-  <div class="create-btn-box">
-    <button class="btn--cta" type="submit" name="create_user">Create</button>  
+  <div class="btn--submit">
+    <button class="btn--cta" type="submit" name="create_user">
+      <i class="fa fa-plus"></i>
+      <span>Create User</span>
+    </button>  
   </div>
   
 </form>

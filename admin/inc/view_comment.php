@@ -45,10 +45,10 @@
       $comment_status = $row['comment_status'];
     }
   ?>
-  <div class="profile-header-box">
+  <div class="page-header-box">
     <div>
-      <h2 class="profile-heading">Comment Information</h2>
-      <span class="profile-header-line"></span>
+      <h2 class="page-heading">Comment Information</h2>
+      <span class="page-heading-line"></span>
     </div>
     <a href="admin_comments.php?where=<?php echo $where; ?>" class="btn--cta user-edit-btn" >
       <i class="fas fa-angle-right"></i>

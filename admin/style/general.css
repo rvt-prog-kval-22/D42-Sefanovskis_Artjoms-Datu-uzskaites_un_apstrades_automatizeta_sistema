@@ -57,5 +57,87 @@ body {
 
 .btn--cta i {
   padding-right: 1.2rem;
+  font-size: 1.6rem;
+}
+
+/* Genera style for page headers */
+
+.btn--submit {
+  display: block;
+  text-align: center;
+}
+
+.page-header-box {
+  display: flex;
+  margin-bottom: 3.2rem;
+  justify-content: space-between;
+}
+
+.page-heading {
+  font-size: 3.2rem;
+  color: #1a1a1a;
+}
+
+.page-heading-line {
+  display: inline-block;
+  border-top: 5px solid #e43314;
+  width: 5rem;
+}
+
+/* General style for horizontal tables */
+
+.hor-table {
+  font-size: 1.2rem;
+  text-align: left;
+  vertical-align: center;
+  border-collapse: collapse;
+}
+
+.hor-table-head {
+  font-size: 1.6rem;
+}
+
+.hor-table th {
+  height: 2.4rem;
+  padding: 1rem;
+}
+
+.hor-table td {
+  height: 5.6rem;
+  padding: 1rem;
+}
+
+.hor-table td:nth-child(2) {
+  width: 7.5rem;
+}
+
+.hor-table tbody tr:nth-child(odd) {
+  background-color: #dfdfdf;
+}
+
+.hor-table a:link,
+.hor-table a:visited {
+  text-decoration: none;
+  color: #e43314;
+}
+
+.hor-table a:hover,
+.hor-table a:active {
+  color: #555;
+}
+
+/* General style for vertical tables */
+
+.ver-table {
   font-size: 1.8rem;
+  width: 100%;
+}
+.ver-table tr td {
+  padding-bottom: 3.2rem;
+}
+
+.ver-table-label {
+  width: 12rem;
+  padding-right: 1.2rem;
+  vertical-align: top;
 }

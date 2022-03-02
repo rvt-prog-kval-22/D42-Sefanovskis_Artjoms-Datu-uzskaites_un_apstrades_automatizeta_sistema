@@ -5,15 +5,15 @@
 
 ?>
 
-  <div class="profile-header-box">
+  <div class="second-header-box">
     <div>
-      <h2 class="profile-heading">Active Orders</h2>
-      <span class="profile-header-line"></span>
+      <h2 class="second-heading">Active Orders</h2>
+      <span class="second-header-line"></span>
     </div>
   </div>
 
   <?php
-    $query = "select o.order_id, s.service_title, c.car_producer, c.car_model, c.car_number_sign, o.order_status, o.order_appointment_date, o.order_completion_date, o.order_end_price ";
+    $query = "select o.order_id, s.service_title, c.car_producer, c.car_model, c.car_number_sign, o.order_status, o.order_appointment_date, if(o.order_completion_date<>'0000-00-00',o.order_completion_date,'Not completed') as 'order_completion_date', if(o.order_end_price = 0,'Not defined' , o.order_end_price) as 'order_end_price' ";
     $query.= "FROM orders as o ";
     $query.= "JOIN services as s on s.service_id = o.order_service_id ";
     $query.= "JOIN cars as c on c.car_id = o.order_car_id ";

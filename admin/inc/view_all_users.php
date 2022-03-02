@@ -1,58 +1,62 @@
 <div class="wrapper">
-<div class="create-button-box">
-  <a href="admin-users.php?source=add_user" class="btn--cta user-create-btn">
-    <i class="fas fa-plus"></i>
-    <span>Create User</span>
-  </a>
-</div>
+  <div class="page-header-box">
+    <div>
+      <h2 class="page-heading">View Users</h2>
+      <span class="page-heading-line"></span>
+    </div>
+    <a href="admin-users.php?source=add_user" class="btn--cta user-create-btn">
+      <i class="fas fa-plus"></i>
+      <span>Create User</span>
+    </a>
+  </div>
 
-<table class="users-table"> 
-  <thead class="users-table-head" >
-    <tr>
-      <th>ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Role</th>
-      <th>Options</th>
-      <th></th>
-      <th></th> 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody class="users-table-body" >
-    
-    <?php  
-    $query = "select*from users";
-    $select_users = mysqli_query($conn,$query);
-    
-    while ($row = mysqli_fetch_assoc($select_users)) {
+  <table class="hor-table"> 
+    <thead class="hor-table-head" >
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Role</th>
+        <th>Options</th>
+        <th></th>
+        <th></th> 
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
       
-      $user_id = $row['user_id'];
-      $user_first = $row['user_first'];
-      $user_last = $row['user_last'];
-      $user_email = $row['user_email'];
-      $user_phone = $row['user_phone'];
-      $user_phone_code = $row['user_phone_code'];
-      $user_role = $row['user_role'];
+      <?php  
+      $query = "select*from users";
+      $select_users = mysqli_query($conn,$query);
       
-      echo "<tr class='users-table-row'>";
-      echo "<td>{$user_id}</td>";
-      echo "<td>{$user_first}</td>";
-      echo "<td>{$user_last}</td>";
-      echo "<td>{$user_email}</td>";
-      echo "<td>+{$user_phone_code} {$user_phone}</td>";
-      echo "<td>{$user_role}</td>";
-      echo "<td><a href='admin-users.php?change_to_user=$user_id'>Change to User</a></td>";
-      echo "<td><a href='admin-users.php?change_to_admin=$user_id'>Change to Admin</a></td>";
-      echo "<td><a href='admin-users.php?source=edit_user&u_id={$user_id}'>Edit</a></td>";
-      echo "<td><a href='admin-users.php?delete=$user_id'>Delete</a></td>";
-      echo "</tr>";
-    }
-    ?>
-  </tbody>
-</table>
+      while ($row = mysqli_fetch_assoc($select_users)) {
+        
+        $user_id = $row['user_id'];
+        $user_first = $row['user_first'];
+        $user_last = $row['user_last'];
+        $user_email = $row['user_email'];
+        $user_phone = $row['user_phone'];
+        $user_phone_code = $row['user_phone_code'];
+        $user_role = $row['user_role'];
+        
+        echo "<tr>";
+        echo "<td>{$user_id}</td>";
+        echo "<td>{$user_first}</td>";
+        echo "<td>{$user_last}</td>";
+        echo "<td>{$user_email}</td>";
+        echo "<td>+{$user_phone_code} {$user_phone}</td>";
+        echo "<td>{$user_role}</td>";
+        echo "<td><a href='admin-users.php?change_to_user=$user_id'>Change to User</a></td>";
+        echo "<td><a href='admin-users.php?change_to_admin=$user_id'>Change to Admin</a></td>";
+        echo "<td><a href='admin-users.php?source=edit_user&u_id={$user_id}'>Edit</a></td>";
+        echo "<td><a href='admin-users.php?delete=$user_id'>Delete</a></td>";
+        echo "</tr>";
+      }
+      ?>
+    </tbody>
+  </table>
 </div>
 
 

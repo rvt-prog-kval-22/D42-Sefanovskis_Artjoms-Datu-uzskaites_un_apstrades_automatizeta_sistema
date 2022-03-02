@@ -56,10 +56,13 @@
   }
 
 ?>
-
-<div class="create-button-box">
+<div class="page-header-box">
+  <div>
+    <h2 class="page-heading">Edit Service</h2>
+    <span class="page-heading-line"></span>
+  </div>
   <a href="admin-services.php" class="btn--cta services-create-btn">
-  <i class="fas fa-angle-right"></i>
+    <i class="fas fa-angle-right"></i>
     <span>Back</span>
   </a>
 </div>
@@ -83,8 +86,11 @@
   <textarea class="text service-description" name="service_description" rows="10"><?php echo $service_description; ?>
   </textarea>  
 
-  <div class="create-btn-box">
-    <button class="btn--cta" type="submit" name="update_service">Update</button>  
+  <div class="btn--submit">
+    <button class="btn--cta" type="submit" name="update_service">
+      <i class="fa fa-rotate-left"></i>
+      <span>Update</span>
+    </button>  
   </div>
   
 </form>

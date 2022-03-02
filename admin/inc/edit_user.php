@@ -45,14 +45,17 @@ if(isset($_POST['update_user'])){
   else {
     header('Location: admin-users.php');
   }
-
 }
 
 ?>
 
-<div class="create-button-box">
+<div class="page-header-box">
+  <div>
+    <h2 class="page-heading">Edit user</h2>
+    <span class="page-heading-line"></span>
+  </div>
   <a href="admin-users.php" class="btn--cta services-create-btn">
-  <i class="fas fa-angle-right"></i>
+    <i class="fas fa-angle-right"></i>
     <span>Back</span>
   </a>
 </div>
@@ -77,8 +80,11 @@ if(isset($_POST['update_user'])){
   <label class="input-label" for="user_password">Password</label>
   <input value="<?php echo $user_password; ?>" type="password" name="user_password" class="text input-field">
 
-  <div class="create-btn-box">
-    <button class="btn--cta" type="submit" name="update_user">Update</button>  
+  <div class="btn--submit">
+    <button class="btn--cta" type="submit" name="update_user">
+      <i class="fa fa-rotate-left"></i>
+      <span>Update User</span>
+    </button>  
   </div>
   
 </form>

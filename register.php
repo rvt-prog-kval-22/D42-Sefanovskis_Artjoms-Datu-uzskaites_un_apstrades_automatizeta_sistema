@@ -40,7 +40,19 @@
 <link rel="stylesheet" href="css/login.css" />
 
 <main class="container register-container">
-  <h3 class="big-heading login-heading">Register</h3>
+
+  <div class="second-header-box">
+    <div>
+      <h2 class="second-heading">Register</h2>
+      <span class="second-header-line"></span>
+    </div>
+    
+    <a href="login.php" class="btn--cta user-edit-btn" >
+      <i class="fas fa-angle-right"></i>
+      <span>Back</span>
+    </a>
+  </div>
+
   <div class="login-box">
       <form action="#" method="post">
 

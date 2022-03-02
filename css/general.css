@@ -99,6 +99,23 @@ body {
   margin-bottom: 4.8rem;
 }
 
+.second-header-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3.2rem;
+}
+
+.second-heading {
+  font-size: 3.2rem;
+  color: #1a1a1a;
+}
+
+.second-header-line {
+  display: inline-block;
+  border-top: 5px solid #e43314;
+  width: 5rem;
+}
+
 .btn--cta,
 .btn--cta:link,
 .btn--cta:visited {
@@ -122,4 +139,15 @@ body {
 .btn--cta i {
   padding-right: 1.2rem;
   font-size: 1.8rem;
+}
+
+.need-to-login-link:link,
+.need-to-login-link:visited {
+  text-transform: uppercase;
+  color: #e43314;
+  text-decoration: none;
+}
+.need-to-login-link:hover,
+.need-to-login-link:active {
+  color: #555;
 }

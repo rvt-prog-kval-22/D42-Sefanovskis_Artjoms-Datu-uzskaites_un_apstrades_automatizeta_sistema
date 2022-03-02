@@ -7,7 +7,7 @@
   display: flex;
   gap: 1.8rem;
   margin-bottom: 3.2rem;
-  justify-content: right;
+  justify-content: left;
 }
 
 .where-btn:link,
@@ -28,38 +28,41 @@
   color: #f3f3f3;
 }
 
-.users-table {
-  font-size: 1.2rem;
-  text-align: center;
-  vertical-align: center;
-  border-collapse: collapse;
+.inner-table tbody tr:nth-child(odd) {
+  background-color: #f3f3f3;
 }
 
-.users-table th {
-  height: 2.4rem;
-  padding: 1rem;
+.inner-table tbody {
+  font-size: 1.8rem;
 }
 
-.users-table td {
-  height: 5.6rem;
-  padding: 1rem;
+.ver-table-input {
+  height: 2.6rem;
+  border: 1px solid #555;
+  font-family: "Roboto";
+  background-color: #f3f3f3;
 }
 
-.users-table td:nth-child(2) {
-  width: 7.5rem;
-}
-
-.users-table tbody tr:nth-child(odd) {
-  background-color: #dfdfdf;
-}
-
-.users-table a:link,
-.users-table a:visited {
+.report-link:link,
+.report-link:visited {
   text-decoration: none;
   color: #e43314;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-.users-table a:hover,
-.users-table a:active {
+.report-link:hover,
+.report-link:active {
   color: #555;
+}
+
+.text-inputfield {
+  width: 100%;
+  font-family: "Roboto";
+  outline: none;
+  padding: 0.8rem;
+}
+
+.margin-bottom {
+  margin-bottom: 3.2rem;
 }

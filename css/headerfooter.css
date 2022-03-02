@@ -97,14 +97,6 @@ h1:hover {
   right: 3.2rem;
 }
 
-.main-nav-link-on {
-  display: inline-block;
-}
-
-.main-nav-link-off {
-  display: none;
-}
-
 .main-nav-link:link,
 .main-nav-link:visited {
   color: #a2a2a2;

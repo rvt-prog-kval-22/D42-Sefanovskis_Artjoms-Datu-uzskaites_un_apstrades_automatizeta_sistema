@@ -15,10 +15,10 @@
       $password = $row['user_role'];
     }
   ?>
-  <div class="profile-header-box">
+  <div class="second-header-box">
     <div>
-      <h2 class="profile-heading">Profile Information</h2>
-      <span class="profile-header-line"></span>
+      <h2 class="second-heading">Profile Information</h2>
+      <span class="second-header-line"></span>
     </div>
     <a href="profile.php?source=edit_user" class="btn--cta user-edit-btn" >
       <i class="fas fa-pen"></i>

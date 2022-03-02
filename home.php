@@ -160,20 +160,20 @@
   <section class="services"></section>
   <section class="testimonials">
     <div class="container">
-      <div class="testimonials-header-box">
-        <div>
-          <div class="smaller-heading-box">
-            <h2 class="smaller-heading">Happy Clients</h2>
-            <span class="lines"></span>
-          </div>
-          <h3 class="big-heading">Our Testimonials</h3>
-        </div>
-        <a class="btn--cta btn--testimonials" href="testimonials.php">
-          <i class="fas fa-angle-right"></i>
-          <span>See All Testimonials</span>
-        </a>
-      </div>
       <div class="testimonial-box">
+        <div class="testimonials-header-box">
+          <div>
+            <div class="smaller-heading-box">
+              <h2 class="smaller-heading">Happy Clients</h2>
+              <span class="lines"></span>
+            </div>
+            <h3 class="big-heading">Our Testimonials</h3>
+          </div>
+          <a class="btn--cta btn--testimonials" href="testimonials.php">
+            <i class="fas fa-angle-right"></i>
+            <span>See All Testimonials</span>
+          </a>
+        </div>
         <?php 
           $query = "select COUNT(comment_id) as reviews, round(AVG(comment_rating),1) as rating ";
           $query.= "FROM `comments` ";

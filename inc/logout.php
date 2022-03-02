@@ -9,4 +9,4 @@ $_SESSION['user_phone'] = null;
 $_SESSION['user_phone_code'] = null;
 $_SESSION['user_role'] = null;
 
-header("Location: ../login.php");
+header("Location: ../home.php");

@@ -4,7 +4,10 @@
 
 <main class="container">
   <?php
-  if (isset($_SESSION['user_id']) && isset($_GET['p_id'])) {
+  if (!isset($_SESSION['user_id']) || !isset($_GET['p_id'])) {
+    header('Location: need_to_login.php');
+  }
+  else{
     $user_id = $_SESSION['user_id'];
     $service_id = $_GET['p_id'];
 

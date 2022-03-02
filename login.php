@@ -3,7 +3,12 @@
 <main class="container">
 <link rel="stylesheet" href="css/login.css" />
 
-  <h3 class="big-heading login-heading">Log-In</h3>
+<div class="second-header-box">
+    <div>
+      <h2 class="second-heading">Log-In</h2>
+      <span class="second-header-line"></span>
+    </div>
+  </div>
   <div class="login-box">
       <form action="inc/login.php" method="post">
         <label class="text login-label" for="email">Enter Email Address:</label>

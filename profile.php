@@ -7,7 +7,7 @@
       <li class="profile-menu-item"><a class="profile-menu-link" href="profile.php?source=view_cars">My Cars</a></li>
       <li class="profile-menu-item"><a class="profile-menu-link" href="profile.php?source=view_active_orders">Active Orders</a></li>
       <li class="profile-menu-item"><a class="profile-menu-link" href="profile.php?source=view_order_history">Order History</a></li>
-      <li class="profile-menu-item"><a class="profile-menu-link" href="profile.php?source=view_user_comemts">My Comments</a></li>
+      <li class="profile-menu-item"><a class="profile-menu-link" href="profile.php?source=view_user_comments">My Comments</a></li>
       <li class="profile-menu-item"><a class="profile-menu-link" href="inc/logout.php">Log-Out</a></li>
     </ul>
   </menu>
@@ -20,22 +20,23 @@
       $source = '';
     }
     switch ($source) {
-      case 'edit_user':
-        include "inc/edit_user.php";
+      
+      case 'add_car':
+        include "inc/add_car.php";
         break;
 
       case 'view_cars':
         include "inc/view_cars.php";
         break;
-
-      case 'add_car':
-        include "inc/add_car.php";
+        
+      case 'view_user_comments':
+        include "inc/view_user_comments.php";
         break;
-
-      case 'edit_car':
-        include "inc/edit_car.php";
+        
+      case 'view_report':
+        include "inc/view_report.php";
         break;
-
+        
       case 'view_active_orders':
         include "inc/view_active_orders.php";
         break;
@@ -44,8 +45,16 @@
         include "inc/view_order_history.php";
         break;
 
-      case 'view_user_comments':
-        include "inc/view_user_comments.php";
+      case 'edit_user':
+        include "inc/edit_user.php";
+        break;
+              
+      case 'edit_car':
+        include "inc/edit_car.php";
+        break;
+
+      case 'edit_comment':
+        include "inc/edit_comment.php";
         break;
           
       default:

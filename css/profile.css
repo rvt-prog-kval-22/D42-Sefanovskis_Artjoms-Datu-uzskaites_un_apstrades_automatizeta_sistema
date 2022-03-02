@@ -38,23 +38,6 @@
 
 /* Profile Information */
 
-.profile-header-box {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 3.2rem;
-}
-
-.profile-heading {
-  font-size: 3.2rem;
-  color: #1a1a1a;
-}
-
-.profile-header-line {
-  display: inline-block;
-  border-top: 5px solid #e43314;
-  width: 5rem;
-}
-
 .user-data-box {
   font-size: 1.8rem;
   width: 100%;
@@ -65,6 +48,7 @@
 
 .user-data-label {
   width: 12rem;
+  vertical-align: top;
 }
 
 .covered-password-box {
@@ -77,6 +61,11 @@
 .user-data-input {
   width: 100%;
   height: 2.4rem;
+}
+
+.user-data-input-checkbox {
+  height: 2.4rem;
+  width: 2.4rem;
 }
 
 .user-data-input-textfield {
@@ -133,4 +122,13 @@
 .users-table a:hover,
 .users-table a:active {
   color: #555;
+}
+
+.hidden-element {
+  align-self: left;
+}
+
+.rating-input {
+  width: 3rem;
+  height: 2.4rem;
 }

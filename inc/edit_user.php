@@ -43,10 +43,10 @@
       }
     }
   ?>
-  <div class="profile-header-box">
+  <div class="second-header-box">
     <div>
-      <h2 class="profile-heading">Edit Profile Information</h2>
-      <span class="profile-header-line"></span>
+      <h2 class="second-heading">Edit Profile Information</h2>
+      <span class="second-header-line"></span>
     </div>
     
     <a href="profile.php" class="btn--cta user-edit-btn" >

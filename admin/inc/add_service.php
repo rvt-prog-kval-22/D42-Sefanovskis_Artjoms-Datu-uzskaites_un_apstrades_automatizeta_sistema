@@ -25,9 +25,13 @@
   }
   ?>
 
-<div class="create-button-box">
+<div class="page-header-box">
+  <div>
+    <h2 class="page-heading">Add Service</h2>
+    <span class="page-heading-line"></span>
+  </div>
   <a href="admin-services.php" class="btn--cta services-create-btn">
-  <i class="fas fa-angle-right"></i>
+    <i class="fas fa-angle-right"></i>
     <span>Back</span>
   </a>
 </div>
@@ -49,8 +53,11 @@
   <label class="input-label" for="service_description">Description</label>
   <textarea class="text service-description" name="service_description" rows="10"></textarea>  
 
-  <div class="create-btn-box">
-    <button class="btn--cta" type="submit" name="create_service">Create</button>  
+  <div class="btn--submit">
+    <button class="btn--cta" type="submit" name="create_service">
+      <i class="fas fa-plus"></i>
+      <span>Create</span>
+    </button>  
   </div>
   
 </form>

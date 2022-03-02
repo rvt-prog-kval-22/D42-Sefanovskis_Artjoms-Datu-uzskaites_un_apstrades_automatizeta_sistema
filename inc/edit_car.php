@@ -52,10 +52,10 @@
 
 
   ?>
-  <div class="profile-header-box">
+  <div class="second-header-box">
     <div>
-      <h2 class="profile-heading">Update Car</h2>
-      <span class="profile-header-line"></span>
+      <h2 class="second-heading">Update Car</h2>
+      <span class="second-header-line"></span>
     </div>
     
     <a href="profile.php?source=view_cars" class="btn--cta user-edit-btn" >

@@ -4,8 +4,31 @@
 
 .testimonials-header-box {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  margin-bottom: 3.2rem;
+}
+
+.testimonials-header {
+  font-size: 4.8rem;
+  color: #1a1a1a;
+}
+
+.header-line {
+  display: inline-block;
+  border-top: 5px solid #e43314;
+  width: 5rem;
+}
+
+.create-testimonial {
+  display: flex;
+  align-items: center;
+}
+
+.input-group {
+  margin-bottom: 1.6rem;
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
 }
 
 .review-label {
@@ -14,9 +37,17 @@
   display: inline-block;
 }
 
-.review-inputfield {
+.review-checkbox {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.review-rating {
   display: block;
   margin-bottom: 1.6rem;
+  width: 3.5rem;
+  height: 2.4rem;
+  outline: none;
 }
 .review-inputfield:focus {
   outline: none;

@@ -5,10 +5,10 @@
 
 ?>
 
-    <div class="profile-header-box">
+    <div class="second-header-box">
       <div>
-        <h2 class="profile-heading">My Cars</h2>
-        <span class="profile-header-line"></span>
+        <h2 class="second-heading">My Cars</h2>
+        <span class="second-header-line"></span>
     </div>
     <a href="profile.php?source=add_car" class="btn--cta user-edit-btn" >
       <i class="fas fa-plus"></i>
@@ -29,7 +29,6 @@
       <table class="users-table"> 
         <thead class="users-table-head" >
           <tr>
-            <th></th>
             <th>Number</th> 
             <th>Car Model</th>
             <th>Producer</th>
@@ -58,7 +57,6 @@
             $car_details = $row['car_details'];
             
             echo "<tr class='users-table-row'>";
-            echo "<td><a href='profile.php?source=view_cars&delete={$car_id}'>Delete</a></td>";
             echo "<td>{$counter}</td>";
             echo "<td>{$car_producer}</td>";
             echo "<td>{$car_model}</td>";
@@ -67,6 +65,7 @@
             echo "<td>{$car_interior}</td>";
             echo "<td>{$car_details}</td>";
             echo "<td><a href='profile.php?source=edit_car&c_id={$car_id}'>Edit</a></td>";
+            echo "<td><a href='profile.php?source=view_cars&delete={$car_id}'>Delete</a></td>";
             echo "</tr>";
             $counter+=1;
           }

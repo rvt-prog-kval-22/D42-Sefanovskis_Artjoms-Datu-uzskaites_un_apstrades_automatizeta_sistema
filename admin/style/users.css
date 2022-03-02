@@ -3,54 +3,9 @@
   overflow-x: auto;
 }
 
-/* View All Services */
-
 .wrapper {
   width: fit-content;
 }
-
-.create-button-box {
-  text-align: right;
-  margin-bottom: 2.4rem;
-}
-
-.users-table {
-  font-size: 1.2rem;
-  text-align: center;
-  vertical-align: center;
-  border-collapse: collapse;
-}
-
-.users-table th {
-  height: 2.4rem;
-  padding: 1rem;
-}
-
-.users-table td {
-  height: 5.6rem;
-  padding: 1rem;
-}
-
-.users-table td:nth-child(2) {
-  width: 7.5rem;
-}
-
-.users-table tbody tr:nth-child(odd) {
-  background-color: #dfdfdf;
-}
-
-.users-table a:link,
-.users-table a:visited {
-  text-decoration: none;
-  color: #e43314;
-}
-
-.users-table a:hover,
-.users-table a:active {
-  color: #555;
-}
-
-/* Create User */
 
 .input-label {
   display: block;
@@ -71,9 +26,4 @@
 
 .input-image {
   margin-bottom: 1rem;
-}
-
-.create-btn-box {
-  display: block;
-  text-align: center;
 }

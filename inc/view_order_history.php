@@ -5,18 +5,19 @@
 
 ?>
 
-  <div class="profile-header-box">
+  <div class="second-header-box">
     <div>
-      <h2 class="profile-heading">Order History</h2>
-      <span class="profile-header-line"></span>
+      <h2 class="second-heading">Order History</h2>
+      <span class="second-header-line"></span>
     </div>
   </div>
 
   <?php
-    $query = "select o.order_id, s.service_title, c.car_producer, c.car_model, c.car_number_sign, o.order_status, o.order_appointment_date, o.order_completion_date, o.order_end_price ";
+    $query = "select o.order_id, s.service_id, s.service_title, c.car_producer, c.car_model, c.car_number_sign, o.order_status, o.order_appointment_date, if(o.order_completion_date<>'0000-00-00',o.order_completion_date,'Not completed') as 'order_completion_date', if(o.order_end_price = 0,'Not defined' , o.order_end_price) as 'order_end_price', ifnull(r.report_id,0) as 'order_report' ";
     $query.= "FROM orders as o ";
     $query.= "JOIN services as s on s.service_id = o.order_service_id ";
     $query.= "JOIN cars as c on c.car_id = o.order_car_id ";
+    $query.= "LEFT JOIN order_report as r on r.report_order_id = o.order_id ";
     $query.= "WHERE o.order_user_id = $user_id and o.order_status in ('Completed', 'Canceled')";
 
     $select_order_history = mysqli_query($conn,$query);
@@ -49,6 +50,7 @@
             
             $order_id = $row['order_id'];
             $service = $row['service_title'];
+            $service_id = $row['service_id'];
             $car_producer = $row['car_producer'];
             $car_model = $row['car_model'];
             $car_number = $row['car_number_sign'];
@@ -56,6 +58,13 @@
             $start_date = $row['order_appointment_date'];
             $end_date = $row['order_completion_date'];
             $order_end_price = $row['order_end_price'];
+            $order_report = $row['order_report'];
+            if($order_report == 0){
+              $report = "Report Not Created";
+            }
+            else{
+              $report = "<a href='profile.php?source=view_report&r_id=$order_report'>View Report</a>";
+            }
             
             echo "<tr class='users-table-row'>";
             echo "<td>$order_id</td>";
@@ -65,8 +74,8 @@
             echo "<td>$start_date</td>";
             echo "<td>$end_date</td>";
             echo "<td>$order_end_price</td>";
-            echo "<td>View</td>";
-            echo "<td>Leave Review</td>";
+            echo "<td>$report</td>";
+            echo "<td><a href='add_testimonial.php?r_id=$service_id'>Leave Review</a></td>";
             echo "</tr>";
           }
           ?>

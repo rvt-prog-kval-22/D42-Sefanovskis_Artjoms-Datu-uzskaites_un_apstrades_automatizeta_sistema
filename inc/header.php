@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
     <!----------------->
     <!-- Navigation -->
     <!----------------->
@@ -61,10 +61,7 @@
         <li><a class="main-nav-link" href="services.php">Services</a></li>
         <li><a class="main-nav-link" href="aboutus.php">About Us</a></li>
         <li><a class="main-nav-link" href="testimonials.php">Testimonials</a></li>
-        <li class="<?php conditionalDisplay('on'); ?>"><a class="main-nav-link" href="login.php">Log-In</a></li>
-        <li class="<?php conditionalDisplay('off'); ?>"><a class="main-nav-link" href="profile.php">Profile</a></li>
-        <li class="<?php conditionalDisplay('off'); ?>"><a class="main-nav-link" href="admin/index.php">Admin</a></li>
-        <li class="<?php conditionalDisplay('off'); ?>"><a class="main-nav-link main-nav-link-last" href="inc/logout.php">Log-Out</a></li>
+        <?php displayLinks(); ?>
       </ul>
     </nav>
   </header>

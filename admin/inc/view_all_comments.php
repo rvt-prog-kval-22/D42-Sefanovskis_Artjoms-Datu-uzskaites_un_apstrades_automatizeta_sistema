@@ -25,14 +25,23 @@
     }
   }
 ?>
+
+<div class="page-header-box">
+  <div>
+    <h2 class="page-heading">View Comments</h2>
+    <span class="page-heading-line"></span>
+  </div>
+</div>
+
 <div class="where-box">
   <a class="where-btn" href="admin_comments.php?where=all">View All</a>
   <a class="where-btn" href="admin_comments.php?where=draft">View Draft</a>
   <a class="where-btn" href="admin_comments.php?where=approve">View Approved</a>
   <a class="where-btn" href="admin_comments.php?where=deny">View Denied</a>
 </div>
-<table class="users-table"> 
-  <thead class="users-table-head" >
+
+<table class="hor-table"> 
+  <thead class="hor-table-head" >
     <tr>
       <th>ID</th>
       <th>Topic</th>
@@ -48,7 +57,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody class="users-table-body" >
+  <tbody>
     
     <?php  
     $query = "select comment_id, 
@@ -88,7 +97,7 @@
       $comment_isanonyme = $row['isanonyme'];
       $comment_status = $row['comment_status'];
       
-      echo "<tr class='users-table-row'>";
+      echo "<tr>";
       echo "<td>{$comment_id}</td>";
       echo "<td>{$comment_topic}</td>";
       echo "<td>{$comment_user_id}</td>";

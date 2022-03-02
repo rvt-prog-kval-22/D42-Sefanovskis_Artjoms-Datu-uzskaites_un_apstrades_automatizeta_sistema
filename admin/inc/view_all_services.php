@@ -1,12 +1,16 @@
-<div class="create-button-box">
+<div class="page-header-box">
+  <div>
+    <h2 class="page-heading">View Services</h2>
+    <span class="page-heading-line"></span>
+  </div>
   <a href="admin-services.php?source=add_service" class="btn--cta services-create-btn">
-    <i class="fas fa-plus"></i>
+  <i class="fas fa-plus"></i>
     <span>Create Service</span>
   </a>
 </div>
 
-<table class="services-table"> 
-  <thead class="services-table-head" >
+<table class="hor-table"> 
+  <thead class="hor-table-head">
     <tr>
       <th>ID</th>
       <th>Title</th>
@@ -20,10 +24,22 @@
       <th></th>
     </tr>
   </thead>
-  <tbody class="services-table-body" >
+  <tbody>
     
     <?php  
-    $querry = 'select*from services where service_id not like 1';
+    $querry = "select 
+        s.service_id,
+        s.service_title,
+        s.service_price,
+        s.service_hours,
+        ifnull(COUNT(c.comment_id),0) as 'service_review_count',
+        ifnull(ROUND(AVG(c.comment_rating),2),0) as 'service_rating',
+        s.service_description,
+        s.service_image
+      from services as s 
+      LEFT JOIN (select*from comments where comment_status = 'approve') as c on c.comment_topic_id = s.service_id
+      where service_id <> 1 
+      GROUP BY s.service_id";
     $select_services = mysqli_query($conn,$querry);
     
     while ($row = mysqli_fetch_assoc($select_services)) {
@@ -37,7 +53,7 @@
       $service_description = substr($row['service_description'],0, 200);
       $service_image = $row['service_image'];
       
-      echo "<tr class='services-table-row'>";
+      echo "<tr>";
       echo "<td>{$service_id}</td>";
       echo "<td>{$service_title}</td>";
       echo "<td>£{$service_price}</td>";

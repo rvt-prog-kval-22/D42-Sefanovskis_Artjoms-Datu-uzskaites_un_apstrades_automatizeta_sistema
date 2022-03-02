@@ -111,12 +111,15 @@
 .testimonials {
   padding: 4.8rem 0;
   background-image: url("../img/background-images/testimonials-section-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
 .testimonials-header-box {
   display: flex;
   justify-content: space-between;
-  width: 120rem;
+  width: 110rem;
 }
 
 .btn--testimonials {
