@@ -51,6 +51,9 @@
       <td class="user-data-label">Password: </td>
       <td><span class="covered-password-box"></span></td>
     </tr>
+    <tr>
+      <td>Change Password</td>
+    </tr>
   </table>
   <?php  
   }

@@ -21,7 +21,7 @@
 
     $select_cars = mysqli_query($conn,$query);
 
-    if(empty($select_cars)){
+    if(mysqli_num_rows($select_cars) == 0){
       echo "<h3 class='no-carr-message'>Looks like you havend added any car yet...</h3>";
     }
     else{ 
@@ -30,9 +30,10 @@
         <thead class="users-table-head" >
           <tr>
             <th>Number</th> 
-            <th>Car Model</th>
             <th>Producer</th>
+            <th>Car Model</th>
             <th>Year of Production</th>
+            <th>Number Sign</th>
             <th>Color</th>
             <th>Interior Materieal</th>
             <th>Details</th>
@@ -49,9 +50,10 @@
           while ($row = mysqli_fetch_assoc($select_cars)) {
             
             $car_id = $row['car_id'];
-            $car_model = $row['car_model'];
             $car_producer = $row['car_producer'];
+            $car_model = $row['car_model'];
             $car_year = $row['car_year'];
+            $car_number_sign = $row['car_number_sign'];
             $car_color = $row['car_color'];
             $car_interior = $row['car_interior_material'];
             $car_details = $row['car_details'];
@@ -61,6 +63,7 @@
             echo "<td>{$car_producer}</td>";
             echo "<td>{$car_model}</td>";
             echo "<td>{$car_year}</td>";
+            echo "<td>{$car_number_sign}</td>";
             echo "<td>{$car_color}</td>";
             echo "<td>{$car_interior}</td>";
             echo "<td>{$car_details}</td>";

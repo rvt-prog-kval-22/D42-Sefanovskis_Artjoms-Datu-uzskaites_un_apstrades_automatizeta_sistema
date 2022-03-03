@@ -3,6 +3,8 @@
 
     $user_id = $_SESSION['user_id'];
 
+    $errors = [];
+
     $query = "select*from users where user_id = $user_id";
     $select_user = mysqli_query($conn,$query);
 
@@ -17,29 +19,45 @@
 
     if(isset($_POST['update_user'])){
 
-      $first_name = $_POST['first_name'];
-      $last_name = $_POST['last_name'];
-      $email = $_POST['email'];
-      $phone = $_POST['phone'];
-      $phone_code = $_POST['phone_code'];
-      $password = $_POST['password'];
+      $the_first_name = mysqli_real_escape_string($conn,$_POST['first_name']);
+      $the_last_name = mysqli_real_escape_string($conn,$_POST['last_name']);
+      $the_email = mysqli_real_escape_string($conn,$_POST['email']);
+      $the_phone = mysqli_real_escape_string($conn,$_POST['phone']);
+      $the_phone_code = mysqli_real_escape_string($conn,$_POST['phone_code']);
 
-      $query = "update users set ";
-      $query.= "user_first = '$first_name', ";
-      $query.= "user_last = '$last_name', ";
-      $query.= "user_email = '$email', ";
-      $query.= "user_phone = $phone, ";
-      $query.= "user_phone_code = $phone_code, ";
-      $query.= "user_password = '$password' ";
-      $query.= "where user_id = $user_id";
-
-      $update_user = mysqli_query($conn,$query);
-
-      if (!$update_user) {
-        die('Query Failed ' . mysqli_error($conn));
+      if(validateNameField($the_first_name)){
+        $errors["first"] = validateNameField($the_first_name);
       }
-      else {
-        header('Location: profile.php');
+      if(validateNameField($the_last_name)){
+        $errors["last"] = validateNameField($the_last_name);
+      }
+      if(validateEmail($the_email)){
+        $errors["email"] = validateEmail($the_email);
+      }
+      if(validatenumberField($the_phone)){
+        $errors["phone"] = validatenumberField($the_phone);
+      }
+      if(validatenumberField($the_phone_code)){
+        $errors["code"] = validatenumberField($the_phone_code);
+      }
+
+      if(empty($errors)){
+        $query = "update users set ";
+        $query.= "user_first = '$the_first_name', ";
+        $query.= "user_last = '$the_last_name', ";
+        $query.= "user_email = '$the_email', ";
+        $query.= "user_phone = $the_phone, ";
+        $query.= "user_phone_code = $the_phone_code ";
+        $query.= "where user_id = $user_id";
+
+        $update_user = mysqli_query($conn,$query);
+
+        if (!$update_user) {
+          die('Query Failed ' . mysqli_error($conn));
+        }
+        else {
+          header('Location: profile.php');
+        }
       }
     }
   ?>
@@ -61,27 +79,38 @@
     <table class="user-data-box">
       <tr>
         <td class="user-data-label">First Name: </td>
-        <td><input class="text user-data-input" name="first_name" type="text" value="<?php echo $first_name; ?>"></td>
+        <td>
+          <input type="text" class="text user-data-input" name="first_name" type="text" value="<?php echo $the_first_name ?? $first_name; ?>">
+          <p><?php echo $errors['first'] ?? ''; ?></p>
+        </td>
       </tr>
       <tr>
         <td class="user-data-label">Last Name: </td>
-        <td><input class="text user-data-input" name="last_name" value="<?php echo $last_name; ?>"></td>
+        <td>
+          <input type="text" class="text user-data-input" name="last_name" value="<?php echo $the_last_name ?? $last_name; ?>">
+          <p><?php echo $errors['last'] ?? ''; ?></p>
+        </td>
       </tr>
       <tr>
         <td class="user-data-label">Email: </td>
-        <td><input class="text user-data-input" name="email" value="<?php echo $email; ?>"></td>
+        <td>
+          <input type="email" class="text user-data-input" name="email" value="<?php echo $the_email ?? $email; ?>">
+          <p><?php echo $errors['email'] ?? ''; ?></p>
+        </td>
       </tr>
       <tr>
         <td class="user-data-label">Phone: </td>
-        <td><input class="text user-data-input" name="phone" value="<?php echo $phone; ?>"></td>
+        <td>
+          <input type="number" class="text user-data-input" name="phone" value="<?php echo $the_phone ?? $phone; ?>">
+          <p><?php echo $errors['phone'] ?? ''; ?></p>
+        </td>
       </tr>
       <tr>
         <td class="user-data-label">Phone Code: </td>
-        <td><input class="text user-data-input" name="phone_code" value="<?php echo $phone_code; ?>"></td>
-      </tr>
-      <tr>
-        <td class="user-data-label">Password: </td>
-        <td><input class="text user-data-input" name="password" value="<?php echo $password; ?>"></td>
+        <td>
+          <input type="number" class="text user-data-input" name="phone_code" value="<?php echo $the_phone_code ?? $phone_code; ?>">
+          <p><?php echo $errors['code'] ?? ''; ?></p>
+        </td>
       </tr>
     </table>
     <div class="update-profile-btn-box">

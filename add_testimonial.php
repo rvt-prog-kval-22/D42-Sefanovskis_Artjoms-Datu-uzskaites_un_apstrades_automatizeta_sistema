@@ -3,10 +3,12 @@
 
 <?php 
 
-  if(!isset($_POST['user_id'])){
+  if(!isset($_SESSION['user_id'])){
     header('Location: need_to_login.php');
   }
   $service_id = $_GET['r_id'];
+
+  $errors = [];
   
   $query = "select service_title from services where service_id = $service_id";
   $select_title = mysqli_query($conn,$query);
@@ -16,27 +18,38 @@
   }
 
   if(isset($_POST['submit_review'])){
-    $comment_topic_id = $_GET['r_id'];
+
     $comment_user = $_SESSION['user_id'];
-    $comment_rating = $_POST['comment_rating'];
+    $comment_topic_id = $_GET['r_id'];
+    $comment_rating = mysqli_real_escape_string($conn,$_POST['comment_rating']);
+    $comment_content = mysqli_real_escape_string($conn,$_POST['comment_content']);
+  
     if(isset($_POST['comment_isanonyme'])){
       $comment_isanonyme = 1;
     }
     else{
       $comment_isanonyme = 0;
     }
-    $comment_content = $_POST['comment_content'];
 
-    $query = "insert into comments(comment_topic_id, comment_user_id, comment_rating, comment_content, comment_date, comment_isanonyme) ";
-    $query.= "values($comment_topic_id, $comment_user, $comment_rating, '$comment_content', now(), $comment_isanonyme)";
-    
-    $create_review_query = mysqli_query($conn,$query);
-
-    if (!$create_review_query) {
-      die('Query Failed ' . mysqli_error($conn));
+    if(validateRating($comment_rating)){
+      $errors['rating'] = validateRating($comment_rating);
     }
-    else {
-      header('Location: testimonials.php');
+    if(validateField($comment_content)){
+      $errors["comment"] = validateField($comment_content);
+    }
+
+    if(empty($errors)){
+      $query = "insert into comments(comment_topic_id, comment_user_id, comment_rating, comment_content, comment_date, comment_isanonyme) ";
+      $query.= "values($comment_topic_id, $comment_user, $comment_rating, '$comment_content', now(), $comment_isanonyme)";
+      
+      $create_review_query = mysqli_query($conn,$query);
+
+      if (!$create_review_query) {
+        die('Query Failed ' . mysqli_error($conn));
+      }
+      else {
+        header('Location: testimonials.php?add_testimonial=success');
+      }
     }
   }
 ?>
@@ -47,7 +60,7 @@
       <span class="header-line"></span>
     </div>
   
-    <a class="btn--cta create-testimonial" onclick="history.back()">
+    <a class="btn--cta" onclick="history.back()">
       <i class="fas fa-angle-right"></i>
       <span>Back</span>
     </a>
@@ -55,18 +68,28 @@
 
   <form action="" method="post">
 
-    <div class="input-group">
-      <label class="review-label" for="comment_isanonyme">Stay Anonime:</label>
-      <input class="review-checkbox" type="checkbox" name="comment_isanonyme">
-    </div>
-
-    <div class="input-group">
-      <label class="review-label" for="comment_rating">Rating(1-5):</label>
-      <input class="review-rating" type="number" name="comment_rating">
-    </div>
-
-    <label class="review-label" for="comment_content">Your review:</label>
-    <textarea class="review-textarea text" name="comment_content" rows="15"></textarea>
+    <table class="table-data-box">
+      <tr>
+        <td class="table-data-label">Stay Anonime:</td>
+        <td>
+          <input class="review-checkbox" type="checkbox" <?php if($comment_isanonyme ?? 0){echo "checked";} ?> name="comment_isanonyme">
+        </td>
+      </tr>
+      <tr>
+        <td class="table-data-label">Rating(1-5):</td>
+        <td>
+          <input class="review-rating" type="number" name="comment_rating">
+          <p><?php echo $errors['rating'] ?? ''; ?></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-data-label">Your review:</td>
+        <td>
+          <textarea class="review-textarea text" name="comment_content" rows="15"></textarea>
+          <p><?php echo $errors['comment'] ?? ''; ?></p>
+        </td>
+      </tr>
+    </table>
 
     <div class="review-create-btn-box">
       <button class="btn--cta" name="submit_review" type="submit">

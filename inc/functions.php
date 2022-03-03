@@ -17,7 +17,7 @@ function displayStars($rating)
     $rating-=1;
   }
 }
-
+ 
 function displayLinks(){
   if(isset($_SESSION['user_id'])){
     echo "<li><a class='main-nav-link' href='profile.php'>Profile</a></li>";
@@ -28,5 +28,94 @@ function displayLinks(){
   }
   else{
     echo "<li><a class='main-nav-link' href='login.php'>Log-In</a></li>";
+  }
+}
+
+function validateField($value){
+  $value = trim($value);
+  if(empty($value)){
+    return "Please Fill the field";
+  }
+  else{
+    return;
+  }
+}
+
+function validateEmail($email){
+  $email = trim($email);
+  if(empty($email)){
+    return "Please fill the field";
+  }
+  else{
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      return "Please enter valid email";
+    }
+    else return;
+  }
+}
+
+function validateNameField($name){
+  $name = trim($name);
+  if(empty($name)){
+    return "Please fill the field";
+  }
+  else{
+    if(!preg_match("/^[a-zA-Z]*$/", $name)){
+      return "Invalid characters";
+    }
+    else{
+      return;
+    }
+  }
+}
+
+function validateNumberField($number){
+  $number = trim($number);
+  if(empty($number)){
+    return "Please fill the field";
+  }
+  else{
+    if(!is_numeric($number)){
+      return "Invalid characters";
+    }
+    else{
+      return;
+    }
+  }
+}
+
+function validatePassword($password){
+  $password = trim($password);
+  if(empty($password)){
+    return "Please fill the field";
+  }
+  else{
+    $lenght = strlen($password);
+    if($lenght < 6 || $lenght > 22){
+      return "Password must have from 6 to 21 characters";
+    }
+    else{
+      return;
+    }
+  }
+}
+
+function validateRating($rating){
+  $rating = trim($rating);
+  if(empty($rating)){
+    return "Please fill the field";
+  }
+  else{
+    if(!is_numeric($rating)){
+      return "Invalid characters";
+    }
+    else{
+      if($rating > 5 || $rating < 1){
+        return "Rating must in range from 1 to 5";
+      }
+      else{
+        return;
+      }
+    }
   }
 }

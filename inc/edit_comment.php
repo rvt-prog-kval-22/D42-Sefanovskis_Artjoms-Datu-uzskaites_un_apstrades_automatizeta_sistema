@@ -5,6 +5,8 @@
 
     $comment_id = $_GET['comment_id'];
 
+    $errors = [];
+
     $query = "select c.comment_id, s.service_title, c.comment_rating, c.comment_content, c.comment_date, c.comment_isanonyme, c.comment_status
       from comments as c
       join services as s on s.service_id = c.comment_topic_id 
@@ -28,24 +30,33 @@
       else{
         $the_comment_isanonyme = 0;
       }
-      $the_comment_rating = $_POST['comment_rating'];
-      $the_comment_content = $_POST['comment_content'];
+      $the_comment_rating = mysqli_real_escape_string($conn,$_POST['comment_rating']);
+      $the_comment_content = mysqli_real_escape_string($conn,$_POST['comment_content']);
 
-      $query = "update comments set ";
-      $query.= "comment_rating = $the_comment_rating, ";
-      $query.= "comment_content = '$the_comment_content', ";
-      $query.= "comment_date = now(), ";
-      $query.= "comment_isanonyme = $the_comment_isanonyme, ";
-      $query.= "comment_status = 'draft' ";
-      $query.= "where comment_id = $comment_id ";
-    
-      $update_comment_query = mysqli_query($conn, $query);
-
-      if (!$update_comment_query) {
-        die('Query Failed ' . mysqli_error($conn));
+      if(validateRating($the_comment_rating)){
+        $errors['rating'] = validateRating($the_comment_rating);
       }
-      else {
-        header('Location: profile.php?source=view_user_comments');
+      if(validateField($the_comment_content)){
+        $errors["comment"] = validateField($the_comment_content);
+      }
+
+      if(empty($errors)){
+        $query = "update comments set ";
+        $query.= "comment_rating = $the_comment_rating, ";
+        $query.= "comment_content = '$the_comment_content', ";
+        $query.= "comment_date = now(), ";
+        $query.= "comment_isanonyme = $the_comment_isanonyme, ";
+        $query.= "comment_status = 'draft' ";
+        $query.= "where comment_id = $comment_id ";
+      
+        $update_comment_query = mysqli_query($conn, $query);
+
+        if (!$update_comment_query) {
+          die('Query Failed ' . mysqli_error($conn));
+        }
+        else {
+          header('Location: profile.php?source=view_user_comments');
+        }
       }
     }
     
@@ -79,17 +90,21 @@
       </tr>
       <tr>
         <td class="user-data-label">Stay Anonyme: </td>
-        <td><input type="checkbox" class="text user-data-input-checkbox" value="<?php echo $comment_isanonyme; ?>" name="comment_isanonyme"></td>
+        <td><input type="checkbox" class="text user-data-input-checkbox" <?php if($the_comment_isanonyme ?? $comment_isanonyme){echo "checked";}?> name="comment_isanonyme"></td>
       </tr>
       <tr>
         <td class="user-data-label">Comment Rating (1-5): </td>
-        <td><input type="number" class="text rating-input" value="<?php echo $comment_rating; ?>" name="comment_rating"></td>
+        <td>
+          <input type="number" class="text rating-input" value="<?php echo $the_comment_rating ?? $comment_rating; ?>" name="comment_rating">
+          <p><?php echo $errors['rating'] ?? '' ?></p>
+        </td>
       </tr>
 
       <tr>
         <td class="user-data-label">Comment: </td>
         <td>
-          <textarea class="text user-data-input-textfield" rows="10" name="comment_content"><?php echo $comment_content; ?></textarea>
+          <textarea class="text user-data-input-textfield" rows="10" name="comment_content"><?php echo $the_comment_content ?? $comment_content; ?></textarea>
+          <?php echo $errors['comment'] ?? ''; ?>
         </td>
       </tr>
     </table>
