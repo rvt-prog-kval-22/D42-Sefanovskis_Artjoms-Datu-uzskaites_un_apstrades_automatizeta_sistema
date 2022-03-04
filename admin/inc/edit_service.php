@@ -19,40 +19,55 @@
 
   if(isset($_POST['update_service'])){
 
-    $service_title = $_POST['service_title'];
-    $service_price = $_POST['service_price'];
-    $service_hours = $_POST['service_hours'];
-    $service_image = $_FILES['service_image']['name'];
-    $service_image_temp = $_FILES['service_image']['tmp_name'];
-    $service_description = $_POST['service_description'];
+    $the_service_title = mysqli_real_escape_string($conn,$_POST['service_title']);
+    $the_service_price = mysqli_real_escape_string($conn,$_POST['service_price']);
+    $the_service_hours = mysqli_real_escape_string($conn,$_POST['service_hours']);
+    $the_service_description = mysqli_real_escape_string($conn,$_POST['service_description']);
 
-    move_uploaded_file($service_image_temp, "../img/services-images/$service_image");
+    $the_service_image = $_FILES['service_image']['name'];
+    $the_service_image_temp = $_FILES['service_image']['tmp_name'];
 
-    if (empty($service_image)) {
+    move_uploaded_file($the_service_image_temp, "../img/services-images/$the_service_image");
+
+    if (empty($the_service_image)) {
       $query = "select*from services where service_id = $the_service_id ";
       $select_image = mysqli_query($conn,$query);
       while ($row = mysqli_fetch_array($select_image)) {
-        $service_image = $row['service_image'];
+        $the_service_image = $row['service_image'];
       }
     }
 
-    $query = "update services set ";
-    $query.= "service_title = '$service_title', ";
-    $query.= "service_price = $service_price, ";
-    $query.= "service_hours = $service_hours, ";
-    $query.= "service_image = '$service_image', ";
-    $query.= "service_description = '$service_description' ";
-    $query.= "where service_id = $the_service_id";
-
-    $update_service = mysqli_query($conn,$query);
-
-    if (!$update_service) {
-      die('Query Failed ' . mysqli_error($conn));
+    if(validateField($the_service_title)){
+      $errors['title'] = validateRating($the_service_title);
     }
-    else {
-      header('Location: admin-services.php');
+    if(validatePositiveNumberField($the_service_price)){
+      $errors["price"] = validatePositiveNumberField($the_service_price);
+    }
+    if(validatePositiveNumberField($the_service_hours)){
+      $errors["hours"] = validatePositiveNumberField($the_service_hours);
+    }
+    if(validateField($the_service_description)){
+      $errors['description'] = validateRating($the_service_description);
     }
 
+    if(empty($errors)){
+      $query = "update services set ";
+      $query.= "service_title = '$the_service_title', ";
+      $query.= "service_price = $the_service_price, ";
+      $query.= "service_hours = $the_service_hours, ";
+      $query.= "service_image = '$the_service_image', ";
+      $query.= "service_description = '$the_service_description' ";
+      $query.= "where service_id = $the_service_id";
+
+      $update_service = mysqli_query($conn,$query);
+
+      if (!$update_service) {
+        die('Query Failed ' . mysqli_error($conn));
+      }
+      else {
+        header('Location: admin-services.php');
+      }
+    }
   }
 
 ?>
@@ -71,12 +86,15 @@
   
   <label class="input-label" for="service_title">Title</label>
   <input value="<?php echo $service_title; ?>" type="text" name="service_title" class="text input-field">
+  <p class="error-message"><?php echo $errors['title'] ?? ''; ?></p>
 
   <label class="input-label" for="service_price">Price</label>
   <input value="<?php echo $service_price; ?>" type="text" name="service_price" class="text input-field">
+  <p class="error-message"><?php echo $errors['price'] ?? ''; ?></p>
 
   <label class="input-label" for="service_hours">Estimated Labour hours</label>
   <input value="<?php echo $service_hours; ?>" type="text" name="service_hours" class="text input-field">
+  <p class="error-message"><?php echo $errors['hours'] ?? ''; ?></p>
 
   <label class="input-label" for="service_image">Service Image</label>
   <img width="100px" src="../img/services-images/<?php echo $service_image; ?>" alt="Main image of the service">
@@ -85,6 +103,7 @@
   <label class="input-label" for="service_description">Description</label>
   <textarea class="text service-description" name="service_description" rows="10"><?php echo $service_description; ?>
   </textarea>  
+  <p class="error-message"><?php echo $errors['description'] ?? ''; ?></p>
 
   <div class="btn--submit">
     <button class="btn--cta" type="submit" name="update_service">

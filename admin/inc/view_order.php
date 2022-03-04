@@ -5,10 +5,10 @@
     $where = $_GET['where'];
 
     if(isset($_POST['update_order'])){
-      $the_order_status = $_POST['order_status'];
-      $the_order_completion_date = $_POST['order_completion_date'];
-      $the_order_end_price = $_POST['order_end_price'];
-      $the_order_date_of_payment = $_POST['order_date_of_payment'];
+      $the_order_status = mysqli_real_escape_string($conn,$_POST['order_status']);
+      $the_order_completion_date = mysqli_real_escape_string($conn,$_POST['order_completion_date']);
+      $the_order_end_price = mysqli_real_escape_string($conn,$_POST['order_end_price']);
+      $the_order_date_of_payment = mysqli_real_escape_string($conn,$_POST['order_date_of_payment']);
 
       if(empty($the_order_end_price)){
         $the_order_end_price = 0;

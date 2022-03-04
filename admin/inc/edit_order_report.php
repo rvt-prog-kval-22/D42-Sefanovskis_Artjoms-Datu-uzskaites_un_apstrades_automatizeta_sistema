@@ -1,6 +1,7 @@
 <?php 
   $the_order_id = $_GET['o_id'];
   $where = $_GET['where'];
+  $errors = [];
 
   $query = "select*from order_report where report_order_id = $the_order_id";
   $select_report = mysqli_query($conn,$query);
@@ -11,20 +12,26 @@
   }
   
   if(isset($_POST['update_report'])){
-    $report_text = $_POST['report_text'];
+    $the_report_text = mysqli_real_escape_string($conn,$_POST['report_text']);
 
-    $query = "update order_report set ";
-    $query.= "report_date = now(), ";
-    $query.= "report_text = '$report_text' ";
-    $query.= "where report_order_id = $the_order_id";
-
-    $update_report = mysqli_query($conn,$query);
-
-    if (!$update_report) {
-      die('Query Failed ' . mysqli_error($conn));
+    if(validateField($the_report_text)){
+      $errors['report'] = validateRating($the_report_text);
     }
-    else {
-      header("Location: admin_orders.php?source=view_report&o_id=$the_order_id&where=$where");
+
+    if(empty($errors)){
+      $query = "update order_report set ";
+      $query.= "report_date = now(), ";
+      $query.= "report_text = '$the_report_text' ";
+      $query.= "where report_order_id = $the_order_id";
+
+      $update_report = mysqli_query($conn,$query);
+
+      if (!$update_report) {
+        die('Query Failed ' . mysqli_error($conn));
+      }
+      else {
+        header("Location: admin_orders.php?source=view_report&o_id=$the_order_id&where=$where");
+      }
     }
   }
 
@@ -49,7 +56,10 @@
     </tr>
     <tr>
       <td class="ver-table-label">Report:</td>
-      <td><textarea class="text-inputfield" class="text service-description" name="report_text" rows="10"><?php echo $report_text; ?></textarea></td>
+      <td>
+        <textarea class="text-inputfield" class="text service-description" name="report_text" rows="10"><?php echo $the_report_text ?? $report_text; ?></textarea>
+        <p class="error-message"><?php echo $errors['report'] ?? '' ?></p>
+      </td>
     </tr>
   </table>
 

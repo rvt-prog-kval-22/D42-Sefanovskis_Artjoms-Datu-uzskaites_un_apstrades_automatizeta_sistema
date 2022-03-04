@@ -3,6 +3,7 @@
 if(isset($_GET['u_id'])){
   $the_user_id = $_GET['u_id'];
 }
+$errors = [];
 
 $query = "select*from users where user_id = $the_user_id";
 $select_user = mysqli_query($conn,$query);
@@ -20,30 +21,41 @@ while($row = mysqli_fetch_assoc($select_user)){
 
 if(isset($_POST['update_user'])){
 
-  $user_id = $_POST['user_id'];
-  $user_first = $_POST['user_first'];
-  $user_last = $_POST['user_last'];
-  $user_email = $_POST['user_email'];
-  $user_phone = $_POST['user_phone'];
-  $user_phone_code = $_POST['user_phone_code'];
-  $user_password = $_POST['user_password'];
+  $the_user_first = mysqli_real_escape_string($conn,$_POST['user_first']);
+  $the_user_last = mysqli_real_escape_string($conn,$_POST['user_last']);
+  $the_user_phone = mysqli_real_escape_string($conn,$_POST['user_phone']);
+  $the_user_phone_code = mysqli_real_escape_string($conn,$_POST['user_phone_code']);
 
-  $query = "update users set ";
-  $query.= "user_first = '$user_first', ";
-  $query.= "user_last = '$user_last', ";
-  $query.= "user_email = '$user_email', ";
-  $query.= "user_phone = $user_phone, ";
-  $query.= "user_phone_code = $user_phone_code, ";
-  $query.= "user_password = '$user_password' ";
-  $query.= "where user_id = $the_user_id";
-
-  $update_user = mysqli_query($conn,$query);
-
-  if (!$update_user) {
-    die('Query Failed ' . mysqli_error($conn));
+  if(validateNameField($the_user_first)){
+    $errors['first'] = validateNameField($the_user_first);
   }
-  else {
-    header('Location: admin-users.php');
+  if(validateNameField($the_user_last)){
+    $errors['last'] = validateNameField($the_user_last);
+  }
+  if(validateNumberField($the_user_phone)){
+    $errors['number'] = validateNumberField($the_user_phone);
+  }
+  if(validateNumberField($the_user_phone_code)){
+    $errors['code'] = validateNumberField($the_user_phone_code);
+  }
+
+  if(empty($errors)){
+
+    $query = "update users set ";
+    $query.= "user_first = '$the_user_first', ";
+    $query.= "user_last = '$the_user_last', ";
+    $query.= "user_phone = $the_user_phone, ";
+    $query.= "user_phone_code = $the_user_phone_code ";
+    $query.= "where user_id = $the_user_id";
+
+    $update_user = mysqli_query($conn,$query);
+
+    if (!$update_user) {
+      die('Query Failed ' . mysqli_error($conn));
+    }
+    else {
+      header('Location: admin-users.php');
+    }
   }
 }
 
@@ -51,7 +63,7 @@ if(isset($_POST['update_user'])){
 
 <div class="page-header-box">
   <div>
-    <h2 class="page-heading">Edit user</h2>
+    <h2 class="page-heading">Edit user data</h2>
     <span class="page-heading-line"></span>
   </div>
   <a href="admin-users.php" class="btn--cta services-create-btn">
@@ -63,22 +75,20 @@ if(isset($_POST['update_user'])){
 <form action="" method="post">
   
   <label class="input-label" for="user_first">First Name</label>
-  <input value="<?php echo $user_first; ?>" type="text" name="user_first" class="text input-field">
+  <input value="<?php echo $the_user_first ?? $user_first; ?>" type="text" name="user_first" class="text input-field">
+  <p class="error-message"><?php echo $errors['first'] ?? ''; ?></p>
 
   <label class="input-label" for="user_last">Last Name</label>
-  <input value="<?php echo $user_last; ?>" type="text" name="user_last" class="text input-field">
-
-  <label class="input-label" for="user_email">Email</label>
-  <input value="<?php echo $user_email; ?>" type="email" name="user_email" class="text input-field">
+  <input value="<?php echo $the_user_last ?? $user_last; ?>" type="text" name="user_last" class="text input-field">
+  <p class="error-message"><?php echo $errors['last'] ?? ''; ?></p>
 
   <label class="input-label" for="user_phone">Phone number</label>
-  <input value="<?php echo $user_phone; ?>" type="number" name="user_phone" class="text input-field">
+  <input value="<?php echo $the_user_phone ?? $user_phone; ?>" type="number" name="user_phone" class="text input-field">
+  <p class="error-message"><?php echo $errors['phone'] ?? ''; ?></p>
 
   <label class="input-label" for="user_phone_code">Phone number country code</label>
-  <input value="<?php echo $user_phone_code; ?>" type="number" name="user_phone_code" class="text input-field">
-
-  <label class="input-label" for="user_password">Password</label>
-  <input value="<?php echo $user_password; ?>" type="password" name="user_password" class="text input-field">
+  <input value="<?php echo $the_user_phone_code ?? $user_phone_code; ?>" type="number" name="user_phone_code" class="text input-field">
+  <p class="error-message"><?php echo $errors['code'] ?? ''; ?></p>
 
   <div class="btn--submit">
     <button class="btn--cta" type="submit" name="update_user">

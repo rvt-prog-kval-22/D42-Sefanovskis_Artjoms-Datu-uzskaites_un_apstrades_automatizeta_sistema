@@ -84,6 +84,26 @@ function validateNumberField($number){
   }
 }
 
+function validatePositiveNumberField($number){
+  $number = trim($number);
+  if(empty($number)){
+    return "Please fill the field";
+  }
+  else{
+    if(!is_numeric($number)){
+      return "Invalid characters";
+    }
+    else{
+      if($number<0){
+        return "Please enter positive value";
+      }
+      else{
+        return;
+      }
+    }
+  }
+}
+
 function validatePassword($password){
   $password = trim($password);
   if(empty($password)){

@@ -2,6 +2,7 @@
   ob_start(); 
   session_start();
   include '../inc/db.php';
+  include '../inc/functions.php';
 ?> 
 
 <!DOCTYPE html>
