@@ -46,6 +46,11 @@ input[type="number"] {
   grid-template-columns: 20rem 1fr;
 }
 
+.main {
+  padding: 4.8rem 1.8rem 9.6rem 1.8rem;
+  overflow-x: auto;
+}
+
 .btn--cta,
 .btn--cta:link,
 .btn--cta:visited {
@@ -70,6 +75,12 @@ input[type="number"] {
 .btn--cta i {
   padding-right: 1.2rem;
   font-size: 1.6rem;
+}
+
+.empty-msg {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: black;
 }
 
 /* Genera style for page headers */

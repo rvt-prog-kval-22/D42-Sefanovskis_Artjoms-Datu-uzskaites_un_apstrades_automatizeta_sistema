@@ -9,6 +9,28 @@
   </a>
 </div>
 
+<?php
+  $querry = "select 
+  s.service_id,
+  s.service_title,
+  s.service_price,
+  s.service_hours,
+  ifnull(COUNT(c.comment_id),0) as 'service_review_count',
+  ifnull(ROUND(AVG(c.comment_rating),2),0) as 'service_rating',
+  s.service_description,
+  s.service_image
+  from services as s 
+  LEFT JOIN (select*from comments where comment_status = 'approve') as c on c.comment_topic_id = s.service_id
+  where service_id <> 1 
+  GROUP BY s.service_id";
+  $select_services = mysqli_query($conn,$querry);
+
+  if(mysqli_num_rows($select_services) == 0){
+    echo "<div class='empty-msg'>Looks like it is empty here...</div>";
+  }
+  else{
+?>
+
 <table class="hor-table"> 
   <thead class="hor-table-head">
     <tr>
@@ -24,24 +46,9 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
-    
+  <tbody>  
     <?php  
-    $querry = "select 
-        s.service_id,
-        s.service_title,
-        s.service_price,
-        s.service_hours,
-        ifnull(COUNT(c.comment_id),0) as 'service_review_count',
-        ifnull(ROUND(AVG(c.comment_rating),2),0) as 'service_rating',
-        s.service_description,
-        s.service_image
-      from services as s 
-      LEFT JOIN (select*from comments where comment_status = 'approve') as c on c.comment_topic_id = s.service_id
-      where service_id <> 1 
-      GROUP BY s.service_id";
-    $select_services = mysqli_query($conn,$querry);
-    
+  
     while ($row = mysqli_fetch_assoc($select_services)) {
       
       $service_id = $row['service_id'];
@@ -69,7 +76,7 @@
     ?>
   </tbody>
 </table>
-
+<?php } ?>
 
 <?php 
   if (isset($_GET['delete'])) {

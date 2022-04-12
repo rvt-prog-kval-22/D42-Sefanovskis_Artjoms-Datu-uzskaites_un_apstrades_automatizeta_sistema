@@ -10,6 +10,16 @@
     </a>
   </div>
 
+<?php
+$query = "select*from users";
+$select_users = mysqli_query($conn,$query);
+
+if(mysqli_num_rows($select_users) == 0){
+  echo "<div class='empty-msg'>Looks like it is empty here...</div>";
+}
+else{
+?>
+
   <table class="hor-table"> 
     <thead class="hor-table-head" >
       <tr>
@@ -28,9 +38,6 @@
     <tbody>
       
       <?php  
-      $query = "select*from users";
-      $select_users = mysqli_query($conn,$query);
-      
       while ($row = mysqli_fetch_assoc($select_users)) {
         
         $user_id = $row['user_id'];
@@ -58,6 +65,7 @@
     </tbody>
   </table>
 </div>
+<?php } ?>
 
 
 <?php 

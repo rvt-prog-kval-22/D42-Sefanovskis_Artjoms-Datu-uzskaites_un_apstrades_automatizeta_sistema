@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="style/general.css">
   <link rel="stylesheet" href="style/admin-header.css">
   <script defer src="../JS/year.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <title>TGL - Admin</title>
 </head>
 <body>
