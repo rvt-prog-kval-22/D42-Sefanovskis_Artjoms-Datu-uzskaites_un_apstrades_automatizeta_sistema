@@ -15,7 +15,7 @@
 .inputfield {
   display: block;
   width: 100%;
-  height: 30px;
+  height: 3rem;
   margin-bottom: 0.8rem;
 }
 
@@ -43,4 +43,11 @@
 .link-to-register:visited {
   color: #e43314;
   font-size: 1.8rem;
+}
+
+/* ****************** */
+/* Zem 704px 
+/* ****************** */
+
+@media (max-width: 44em) {
 }

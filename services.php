@@ -2,6 +2,11 @@
 <link rel="stylesheet" href="css/services.css" />
 
 <main class="container">
+  <div class="smaller-heading-box">
+    <h2 class="smaller-heading">Our services</h2>
+    <span class="lines"></span>
+  </div>
+  <h3 class="big-heading">Choose what suits you best</h3>
   <div class="item-container">
   <?php 
     $query = "select s.service_id, s.service_title, s.service_price, s.service_image, COUNT(c.comment_id) as service_reviews, CASE WHEN c.comment_rating is null then 0 ELSE round(AVG(c.comment_rating),1) END as service_rating ";

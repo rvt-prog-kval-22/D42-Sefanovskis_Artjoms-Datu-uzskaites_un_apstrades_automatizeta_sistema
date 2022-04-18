@@ -12,7 +12,7 @@
       $email = $row['user_email'];
       $phone = $row['user_phone'];
       $phone_code = $row['user_phone_code'];
-      $password = $row['user_role'];
+      $password = $row['user_password'];
     }
   ?>
   <div class="second-header-box">
@@ -49,12 +49,20 @@
     </tr>
     <tr>
       <td class="user-data-label">Password: </td>
-      <td><span class="covered-password-box"></span></td>
+      <td class="password-row">
+        <span class="covered-password-box"><span class="password-output hidden"><?php echo $password; ?></span></span>
+        <button class="btn--password-vision">
+          <i class="fas fa-eye-slash password-hidden"></i>
+          <i class="fas fa-eye password-open hidden"></i>
+        </button>
+      </td>
     </tr>
     <tr>
-      <td>Change Password</td>
+      <td><a href="profile.php?source=change_password" class="change-password-link">Change Password</a></td>
     </tr>
   </table>
   <?php  
   }
 ?>
+
+<script defer src="JS/hide_password.js"></script>

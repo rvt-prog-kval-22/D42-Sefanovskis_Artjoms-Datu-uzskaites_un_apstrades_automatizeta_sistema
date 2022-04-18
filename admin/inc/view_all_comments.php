@@ -71,7 +71,7 @@
   else{
 ?>
 
-  <table class="hor-table"> 
+  <table class="hor-table view-all-comments-table"> 
     <thead class="hor-table-head" >
       <tr>
         <th>ID</th>
@@ -88,7 +88,7 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="hor-table-body">
     
     <?php  
       while ($row = mysqli_fetch_assoc($select_comments)) {

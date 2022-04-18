@@ -1,7 +1,8 @@
 .profile-main {
   margin: 1.8rem auto;
   padding-bottom: 9.6rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr;
   gap: 2.4rem;
 }
 .profile-menu-list {
@@ -36,8 +37,6 @@
   width: 100%;
 }
 
-/* Profile Information */
-
 .user-data-box {
   font-size: 1.8rem;
   width: 100%;
@@ -51,11 +50,62 @@
   vertical-align: top;
 }
 
+.password-row {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
 .covered-password-box {
   display: inline-block;
   background-color: #555;
+  color: #fff;
   height: 1.8rem;
-  width: 15rem;
+  width: 17rem;
+}
+
+.btn--password-vision {
+  border: none;
+  background: none;
+  font-size: 2rem;
+  padding-top: 0.2rem;
+}
+
+.btn--password-vision:hover {
+  color: #e43314;
+}
+
+.hidden {
+  display: none;
+}
+
+.change-password-link:link,
+.change-password-link:visited {
+  color: #e43314;
+  text-decoration: none;
+}
+.change-password-link:hover,
+.change-password-link:active {
+  color: #555;
+}
+
+.password-change-label {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.change-password-inputfield {
+  width: 25rem;
+  height: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.error-message {
+  margin-bottom: 1.8rem;
+  color: #111;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .user-data-input {
@@ -72,7 +122,7 @@
 .user-data-input-textfield {
   width: 100%;
   padding: 0.8rem;
-  min-height: 6.4rem;
+  min-height: 15rem;
   margin-bottom: 0.8rem;
 }
 
@@ -89,8 +139,6 @@
   font-family: "Oswald";
 }
 
-/* Cars Section */
-
 .users-table {
   font-size: 1.2rem;
   text-align: center;
@@ -106,10 +154,6 @@
 .users-table td {
   height: 5.6rem;
   padding: 1rem;
-}
-
-.users-table td:nth-child(2) {
-  width: 7.5rem;
 }
 
 .users-table tbody tr:nth-child(odd) {
@@ -135,4 +179,204 @@
   width: 3rem;
   height: 2.4rem;
   margin-bottom: 0.8rem;
+}
+
+/* /////////////////////////////// */
+/* Profila sadaļas media */
+/* /////////////////////////////// */
+
+/* ****************** */
+/* Zem 944px 
+/* ****************** */
+
+@media (max-width: 59em) {
+  .profile-main {
+    grid-template-columns: 1fr;
+  }
+  .profile-menu {
+    border-bottom: 1px solid #bbb;
+  }
+  .profile-menu-list {
+    display: flex;
+    border-right: none;
+  }
+  .profile-menu-item {
+    border-bottom: 0;
+    border-right: 1px solid #bbb;
+    margin-bottom: 0.8rem;
+  }
+  .profile-menu-item:last-child {
+    border-right: none;
+  }
+}
+
+/* ****************** */
+/* Zem 544px 
+/* ****************** */
+
+@media (max-width: 34em) {
+  .profile-menu-item {
+    font-size: 1.4rem;
+    padding: 0.8rem;
+    margin-right: 0.5rem;
+  }
+  .users-table {
+    text-align: left;
+  }
+  .users-table,
+  .users-table-head,
+  .users-table-body,
+  .users-table th,
+  .users-table td,
+  .users-table tr {
+    display: block;
+  }
+  .users-table-head tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .users-table tr {
+    border: 1px solid #dfdfdf;
+  }
+  .users-table td {
+    padding: 2rem;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    position: relative;
+    padding-left: 50%;
+  }
+  .users-table td:before {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 45%;
+    height: 50%;
+    padding-top: 1rem;
+    border-right: 1px solid #bbb;
+    white-space: nowrap;
+  }
+  /* Piešķiru tabulām rindu nosaukumus */
+
+  /* Rindu nosaukumi tabulai skatīt visas mašīnas */
+  .view-cars-table td:nth-of-type(1):before {
+    content: "Number:";
+  }
+  .view-cars-table td:nth-of-type(2):before {
+    content: "Producer:";
+  }
+  .view-cars-table td:nth-of-type(3):before {
+    content: "Car Model:";
+  }
+  .view-cars-table td:nth-of-type(4):before {
+    content: "Year of Production:";
+  }
+  .view-cars-table td:nth-of-type(5):before {
+    content: "Number Sign:";
+  }
+  .view-cars-table td:nth-of-type(6):before {
+    content: "Color:";
+  }
+  .view-cars-table td:nth-of-type(7):before {
+    content: "Interior Materieal:";
+  }
+  .view-cars-table td:nth-of-type(8):before {
+    content: "Details:";
+  }
+  .view-cars-table td:nth-of-type(9):before {
+    content: "";
+  }
+  .view-cars-table td:nth-of-type(10):before {
+    content: "";
+  }
+
+  /* Rindu nosaukumi tabulai aktīvie pasūtījumi */
+  .view-active-orders td:nth-of-type(1):before {
+    content: "Order ID:";
+  }
+  .view-active-orders td:nth-of-type(2):before {
+    content: "Service:";
+  }
+  .view-active-orders td:nth-of-type(3):before {
+    content: "Car:";
+  }
+  .view-active-orders td:nth-of-type(4):before {
+    content: "Status:";
+  }
+  .view-active-orders td:nth-of-type(5):before {
+    content: "Appointment Date:";
+  }
+  .view-active-orders td:nth-of-type(6):before {
+    content: "End Date:";
+  }
+  .view-active-orders td:nth-of-type(7):before {
+    content: "End Price:";
+  }
+
+  /* Rindu nosaukumi tabulai pasūtījumu vēsture */
+  .order-history td:nth-of-type(1):before {
+    content: "Order ID:";
+  }
+  .order-history td:nth-of-type(2):before {
+    content: "Service:";
+  }
+  .order-history td:nth-of-type(3):before {
+    content: "Car:";
+  }
+  .order-history td:nth-of-type(4):before {
+    content: "Status:";
+  }
+  .order-history td:nth-of-type(5):before {
+    content: "Appointment Date:";
+  }
+  .order-history td:nth-of-type(6):before {
+    content: "End Date:";
+  }
+  .order-history td:nth-of-type(7):before {
+    content: "End Price:";
+  }
+  .order-history td:nth-of-type(8):before {
+    content: "Order Report:";
+  }
+  .order-history td:nth-of-type(9):before {
+    content: "";
+  }
+
+  /* Rindu nosaukumi tabulai komentāri */
+  .comment-table td:nth-of-type(1):before {
+    content: "Comment ID:";
+  }
+  .comment-table td:nth-of-type(2):before {
+    content: "Topic Title:";
+  }
+  .comment-table td:nth-of-type(3):before {
+    content: "Rating:";
+  }
+  .comment-table td:nth-of-type(4):before {
+    content: "Content:";
+  }
+  .comment-table td:nth-of-type(5):before {
+    content: "Date:";
+  }
+  .comment-table td:nth-of-type(6):before {
+    content: "Anonyme Comment:";
+  }
+  .comment-table td:nth-of-type(7):before {
+    content: "Status:";
+  }
+  .comment-table td:nth-of-type(8):before {
+    content: "";
+  }
+  .comment-table td:nth-of-type(9):before {
+    content: "";
+  }
+}
+/* ****************** */
+/* Zem 400px 
+/* ****************** */
+
+@media (max-width: 25em) {
+  .profile-menu-item {
+    font-size: 1.2rem;
+  }
 }

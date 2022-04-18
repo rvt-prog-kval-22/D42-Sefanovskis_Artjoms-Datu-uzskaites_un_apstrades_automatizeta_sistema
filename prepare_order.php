@@ -106,7 +106,7 @@
         </td>
       </tr>
       <tr>
-        <td class="user-data-label">Select Date</td>
+        <td class="user-data-label">Appointment Date</td>
         <td><input type="date" name="order_date"></td>
       </tr>
     </table>

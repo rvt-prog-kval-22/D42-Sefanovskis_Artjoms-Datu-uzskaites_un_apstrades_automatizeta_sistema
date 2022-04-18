@@ -20,6 +20,10 @@
       $source = '';
     }
     switch ($source) {
+
+      case 'change_password':
+        include "inc/change_password.php";
+        break;
       
       case 'add_car':
         include "inc/add_car.php";

@@ -22,7 +22,7 @@
             <h3 class="slide-secondary-heading">
               We don&#39;t just clean it , We detail it!
             </h3>
-            <a class="btn--cta" href="#"
+            <a class="btn--cta slideshow-btn" href="#"
               ><i class="far fa-calendar-alt"></i>Book your appointment
               today</a
             >
@@ -45,7 +45,7 @@
             <h3 class="slide-secondary-heading">
               We work hard so you can look good
             </h3>
-            <a class="btn--cta" href="#"
+            <a class="btn--cta slideshow-btn" href="#"
               ><i class="far fa-calendar-alt"></i>Find out whitch package
               suits you best</a
             >
@@ -69,7 +69,7 @@
               <br />
               like newer before
             </h2>
-            <a class="btn--cta" href="#"
+            <a class="btn--cta slideshow-btn" href="#"
               ><i class="far fa-calendar-alt"></i>Get 20% off your first
               premium package</a
             >
@@ -86,75 +86,75 @@
   </section>
 
   <section class="about container">
-  <div class="smaller-heading-box">
-    <h2 class="smaller-heading">Why chose us</h2>
-    <span class="lines"></span>
-  </div>
-  <h3 class="big-heading">Welcome to the glow light</h3>
-    <div class="about-content-box">
-      <div class="about-content">
-        <p class="text">
-          At The Glow Light Detailing we maintain the highest standards of
-          car care in the industry. We provide a wide range of superior
-          services including Interior &#38; Exterior detailing, Tire and
-          Wheel Cleaning, waxing and polishing, Vinyl Protection, Ceramic
-          Coating and much more. We offer a wide range of detailing packages
-          and protection for your car or motorbike, and whilst these
-          packages suit most we understand that one size does not fit all.
-          As such, we can happily create a custom package to suit your
-          individual requirements. Your car is one of your most valuable
-          assets. Let us help you maintain and protect it.
-        </p>
-        <ul class="about-checkbox text">
-          <li>
-            <i class="fas fa-check about-checkbox-icon"></i
-            ><span class="about-checkbox-text">Best Prices</span>
-          </li>
-          <li>
-            <i class="fas fa-check about-checkbox-icon"></i
-            ><span class="about-checkbox-text"
-              >Well Maintained Vehicle</span
-            >
-          </li>
-          <li>
-            <i class="fas fa-check about-checkbox-icon"></i
-            ><span class="about-checkbox-text"
-              >High Quality Materials
-            </span>
-          </li>
-          <li>
-            <i class="fas fa-check about-checkbox-icon"></i
-            ><span class="about-checkbox-text">Protection Coatings </span>
-          </li>
-          <li>
-            <i class="fas fa-check about-checkbox-icon"></i
-            ><span class="about-checkbox-text"
-              >80 Point Paint Inspection
-            </span>
-          </li>
-          <li>
-            <i class="fas fa-check about-checkbox-icon"></i
-            ><span class="about-checkbox-text">3 Stage Polishing </span>
-          </li>
-          <li>
-            <i class="fas fa-check about-checkbox-icon"></i
-            ><span class="about-checkbox-text">Courtesy Car </span>
-          </li>
-          <li>
-            <i class="fas fa-check about-checkbox-icon"></i
-            ><span class="about-checkbox-text"
-              >Your Car is Safe & Insured
-            </span>
-          </li>
-        </ul>
-        <a class="btn--cta" href="aboutus.php"
-          ><i class="fas fa-angle-right"></i> <span>READ MORE</span></a
-        >
-      </div>
-      <div class="about-us-img">
-        <img src="img/covered-car.jpg" alt="red cloth covered car" />
-      </div>
+    <div class="smaller-heading-box">
+      <h2 class="smaller-heading">Why chose us</h2>
+      <span class="lines"></span>
     </div>
+    <h3 class="big-heading">Welcome to the glow light</h3>
+      <div class="about-content-box">
+        <div class="about-content">
+          <p class="text about-text">
+            At The Glow Light Detailing we maintain the highest standards of
+            car care in the industry. We provide a wide range of superior
+            services including Interior &#38; Exterior detailing, Tire and
+            Wheel Cleaning, waxing and polishing, Vinyl Protection, Ceramic
+            Coating and much more. We offer a wide range of detailing packages
+            and protection for your car or motorbike, and whilst these
+            packages suit most we understand that one size does not fit all.
+            As such, we can happily create a custom package to suit your
+            individual requirements. Your car is one of your most valuable
+            assets. Let us help you maintain and protect it.
+          </p>
+          <ul class="about-checkbox text">
+            <li>
+              <i class="fas fa-check about-checkbox-icon"></i
+              ><span class="about-checkbox-text">Best Prices</span>
+            </li>
+            <li>
+              <i class="fas fa-check about-checkbox-icon"></i
+              ><span class="about-checkbox-text"
+                >Well Maintained Vehicle</span
+              >
+            </li>
+            <li>
+              <i class="fas fa-check about-checkbox-icon"></i
+              ><span class="about-checkbox-text"
+                >High Quality Materials
+              </span>
+            </li>
+            <li>
+              <i class="fas fa-check about-checkbox-icon"></i
+              ><span class="about-checkbox-text">Protection Coatings </span>
+            </li>
+            <li>
+              <i class="fas fa-check about-checkbox-icon"></i
+              ><span class="about-checkbox-text"
+                >80 Point Paint Inspection
+              </span>
+            </li>
+            <li>
+              <i class="fas fa-check about-checkbox-icon"></i
+              ><span class="about-checkbox-text">3 Stage Polishing </span>
+            </li>
+            <li>
+              <i class="fas fa-check about-checkbox-icon"></i
+              ><span class="about-checkbox-text">Courtesy Car </span>
+            </li>
+            <li>
+              <i class="fas fa-check about-checkbox-icon"></i
+              ><span class="about-checkbox-text"
+                >Your Car is Safe & Insured
+              </span>
+            </li>
+          </ul>
+          <a class="btn--cta" href="aboutus.php"
+            ><i class="fas fa-angle-right"></i> <span>READ MORE</span></a
+          >
+        </div>
+        <div class="about-us-img">
+          <img src="img/covered-car.jpg" alt="red cloth covered car" />
+        </div>
+      </div>
   </section>
   <section class="galery"></section>
   <section class="services"></section>

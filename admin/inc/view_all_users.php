@@ -4,7 +4,7 @@
       <h2 class="page-heading">View Users</h2>
       <span class="page-heading-line"></span>
     </div>
-    <a href="admin-users.php?source=add_user" class="btn--cta user-create-btn">
+    <a href="admin-users.php?source=add_user" class="btn--cta">
       <i class="fas fa-plus"></i>
       <span>Create User</span>
     </a>
@@ -20,7 +20,7 @@ if(mysqli_num_rows($select_users) == 0){
 else{
 ?>
 
-  <table class="hor-table"> 
+  <table class="hor-table view-all-users-table"> 
     <thead class="hor-table-head" >
       <tr>
         <th>ID</th>
@@ -35,7 +35,7 @@ else{
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="hor-table-body">
       
       <?php  
       while ($row = mysqli_fetch_assoc($select_users)) {

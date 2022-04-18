@@ -38,14 +38,17 @@
   letter-spacing: -0.5px;
   line-height: 1.1;
   text-transform: uppercase;
-  margin-bottom: 3.2rem;
+  margin-bottom: 0.8rem;
 }
 
 .slide-secondary-heading {
   color: #ffffff;
   font-size: 4.4rem;
   letter-spacing: -0.5px;
-  margin-bottom: 3.2rem;
+}
+
+.slideshow-btn {
+  margin-top: 3.2rem;
 }
 
 .slideshow-dots {
@@ -76,6 +79,7 @@
 
 .about {
   padding: 4.8rem 3.2rem;
+  display: grid;
 }
 .about-us-img img {
   width: 100%;
@@ -113,20 +117,21 @@
   background-image: url("../img/background-images/testimonials-section-background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: 100%;
+  background-position: center;
 }
 
 .testimonials-header-box {
   display: flex;
   justify-content: space-between;
-  width: 110rem;
+  max-width: 110rem;
 }
 
 .btn--testimonials {
   align-self: center;
 }
 .testimonial-box {
-  width: 120rem;
+  max-width: 120rem;
   padding: 3.2rem;
   background-color: #ffffff;
   border: 1px #d3ced2 solid;
@@ -178,9 +183,135 @@
   margin: 0 auto;
 }
 
-/* - FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+/* /////////////////////////////// */
+/* Home lapas media */
+/* /////////////////////////////// */
 
-- SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128/ 140 / 156 / 192 
-*/
+/* ****************** */
+/* Zem 1560px Lai fona bilde atsauksmēs labi izskatītos pie visiem ekrāna izmēriem */
+/* ****************** */
+
+@media (max-width: 97.5em) {
+  .testimonials {
+    background-size: auto;
+  }
+}
+
+/* ****************** */
+/* Zem 1344px 
+/* ****************** */
+
+@media (max-width: 84em) {
+  .slide-subheading {
+    font-size: 1.8rem;
+    margin-bottom: 1.8rem;
+  }
+  .slide-heading {
+    font-size: 6.2rem;
+  }
+  .slide-secondary-heading {
+    font-size: 3.6rem;
+  }
+  .slide-content {
+    margin-left: 5%;
+  }
+  .testimonials {
+    background-size: auto;
+  }
+}
+
+/* ****************** */
+/* Zem 1200px 
+/* ****************** */
+
+@media (max-width: 75em) {
+  .slide-heading {
+    font-size: 5.2rem;
+  }
+  .slide-secondary-heading {
+    font-size: 3rem;
+  }
+}
+
+/* ****************** */
+/* Zem 944px 
+/* ****************** */
+
+@media (max-width: 59em) {
+  .slide-content {
+    margin-top: -5%;
+  }
+  .slide-subheading {
+    margin-bottom: 1.6rem;
+  }
+  .slide-heading {
+    margin-bottom: 1.4rem;
+  }
+  .slideshow-btn {
+    margin-top: 1.8rem;
+  }
+  .about-content-box {
+    grid-template-columns: 1fr;
+  }
+  .about-us-img {
+    grid-row: 1 / 2;
+    width: 60%;
+    margin: 0 auto;
+  }
+  .about-text {
+    font-size: 1.6rem;
+  }
+}
+
+/* ****************** */
+/* Zem 704px 
+/* ****************** */
+
+@media (max-width: 44em) {
+  .slide-subheading {
+    font-size: 1.8rem;
+  }
+  .slide-heading {
+    font-size: 5.2rem;
+  }
+  .slide-secondary-heading {
+    font-size: 3rem;
+  }
+}
+
+/* ****************** */
+/* Zem 544px 
+/* ****************** */
+
+@media (max-width: 34em) {
+  .slide-subheading {
+    font-size: 1.6rem;
+  }
+  .slide-heading {
+    font-size: 4.4rem;
+  }
+  .slide-secondary-heading {
+    font-size: 2.4rem;
+  }
+}
+
+/* ****************** */
+/* Zem 400px 
+/* ****************** */
+
+@media (max-width: 25em) {
+  .slide-subheading {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  .slide-heading {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+  }
+  .slide-secondary-heading {
+    font-size: 1.8rem;
+  }
+  .slideshow-btn {
+    margin-top: 1rem;
+  }
+}

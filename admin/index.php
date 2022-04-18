@@ -252,8 +252,6 @@
           fontName: 'Oswald', 
           fontSize: 18,     
         },
-        width:450,
-        height:300,
         backgroundColor: '#f2f2f2'
       };
 
@@ -310,8 +308,7 @@
         fontName: 'Oswald', 
         fontSize: 18,     
       },
-      width:450,
-      height:300,
+      width: '100%', 
       backgroundColor: '#f2f2f2'
     };
 
@@ -364,8 +361,7 @@
           fontName: 'Oswald', 
           fontSize: 18,     
         },
-        width: 450,
-        height: 300,
+        width: '100%', 
         legend: { position: "none" },
         backgroundColor: '#f2f2f2'
       };
@@ -416,10 +412,9 @@
         titleTextStyle: {
           color: 'black',
           fontName: 'Oswald', 
-          fontSize: 18,     
+          fontSize: 18,    
         },
-        width: 450,
-        height: 300,
+        width: '100%', 
         legend: { position: "none" },
         backgroundColor: '#f2f2f2'
       };
@@ -446,7 +441,7 @@
     google.charts.setOnLoadCallback(char3);  
 
     // Ielādē datus komentāra skaita diagrammas attēlošanai
-    google.charts.setOnLoadCallback(char4);  
+    google.charts.setOnLoadCallback(char4);
   </script>
 
   <section class="charts">

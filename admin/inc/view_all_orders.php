@@ -94,7 +94,8 @@
   }
   else{
 ?>
-<table class="hor-table"> 
+<div class="wrapper">
+<table class="hor-table view-all-orders-table"> 
   <thead class="hor-table-head" >
     <tr>
       <th>ID</th>
@@ -112,7 +113,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="hor-table-body">
     <?php  
     while ($row = mysqli_fetch_assoc($select_orders)) {
       
@@ -159,6 +160,7 @@
     ?>
   </tbody>
 </table>
+</div>
 <?php } ?>
 
 <?php

@@ -16,6 +16,7 @@
 html {
   font-size: 62.5%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -25,6 +26,7 @@ body {
   color: #555;
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -64,11 +66,15 @@ input[type="number"] {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .lines {
   display: inline-block;
   position: relative;
   align-self: center;
-  width: 150px;
+  width: 15rem;
   height: 1.2rem;
   margin-left: 1.8rem;
 }
@@ -79,7 +85,7 @@ input[type="number"] {
   width: 100%;
   height: 1px;
   top: 60%;
-  border-bottom: #e43314 solid 2px;
+  border-bottom: #e43314 solid 0.2rem;
 }
 
 .lines::before {
@@ -87,7 +93,7 @@ input[type="number"] {
   content: "";
   width: 50%;
   height: 1px;
-  border-bottom: #e43314 solid 2px;
+  border-bottom: #e43314 solid 0.2rem;
   top: -30%;
 }
 
@@ -131,6 +137,9 @@ input[type="number"] {
 .btn--cta,
 .btn--cta:link,
 .btn--cta:visited {
+  font-family: "Oswald";
+  font-weight: 400;
+  letter-spacing: 0.3px;
   display: inline-block;
   color: #fff;
   background-color: #e43314;
@@ -163,4 +172,68 @@ input[type="number"] {
 .need-to-login-link:hover,
 .need-to-login-link:active {
   color: #555;
+}
+
+/* /////////////////////////////// */
+/* Mājaslapas universālie media */
+/* /////////////////////////////// */
+
+/* ****************** */
+/* Zem 1200px */
+/* ****************** */
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+/* ****************** */
+/* Zem 944px */
+/* ****************** */
+
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* ****************** */
+/* Zem 704px  */
+/* ****************** */
+
+@media (max-width: 44em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+/* ****************** */
+/* Zem 544px 
+/* ****************** */
+
+@media (max-width: 34em) {
+  .btn--cta,
+  .btn--cta:link,
+  .btn--cta:visited {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+  .big-heading {
+    font-size: 3rem;
+  }
+  .smaller-heading {
+    font-size: 1.6rem;
+  }
+  .lines {
+    height: 1rem;
+    width: 10rem;
+  }
+  .second-heading {
+    font-size: 2.4rem;
+  }
+  .second-header-line {
+    border-top: 3px solid #e43314;
+    width: 5rem;
+  }
 }

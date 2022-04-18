@@ -27,7 +27,7 @@
     }
     else{
     ?>
-      <table class="users-table"> 
+      <table class="users-table order-history"> 
         <thead class="users-table-head" >
           <tr>
             <th>Order ID</th>

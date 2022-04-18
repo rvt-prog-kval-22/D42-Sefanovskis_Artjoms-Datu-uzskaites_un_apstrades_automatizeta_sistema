@@ -3,7 +3,8 @@
 }
 
 .services-box {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2.4rem;
   margin-bottom: 4.8rem;
 }
@@ -133,4 +134,61 @@
 
 .comment-votes i:hover {
   color: #e43314;
+}
+
+/* /////////////////////////////// */
+/* Preces lapas media */
+/* /////////////////////////////// */
+
+/* ****************** */
+/* Zem 704px 
+/* ****************** */
+
+@media (max-width: 44em) {
+  .services-box {
+    grid-template-columns: 1fr;
+  }
+  .services-img {
+    width: 100%;
+    height: auto;
+  }
+  .services-header {
+    font-size: 4.4rem;
+  }
+  .wrapper,
+  .service-rating-stars,
+  .service-review-score {
+    font-size: 2.4rem;
+  }
+  .service-labour {
+    margin-bottom: 3.2rem;
+  }
+
+  .btn--cta,
+  .btn--cta:link,
+  .btn--cta:visited {
+    font-size: 1.6rem;
+    padding: 1.2rem 2.4rem;
+  }
+}
+
+/* ****************** */
+/* Zem 544px 
+/* ****************** */
+
+@media (max-width: 25em) {
+  .btn--cta,
+  .btn--cta:link,
+  .btn--cta:visited {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+  .services-header {
+    font-size: 3.6rem;
+  }
+  .wrapper,
+  .service-rating-stars,
+  .service-review-score {
+    font-size: 2rem;
+  }
 }

@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="css/aboutus.css" />
 
 <main class="container">
-  <section class="about-section about-grid-2">
+  <section class="about-section">
     <div class="section-who-content">
       <div class="smaller-heading-box">
         <h2 class="smaller-heading">About us</h2>
@@ -20,7 +20,7 @@
     </div>
   </section>
     
-  <section class="about-section about-grid-2">
+  <section class="about-section">
     <div>
       <iframe class="about-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77411.58311887734!2d-2.5319509463978718!3d52.6760157593452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870780b0d577243%3A0x9139ed82d06f8811!2sTelford%2C%20Apvienot%C4%81%20Karaliste!5e0!3m2!1slv!2slv!4v1642761070763!5m2!1slv!2slv" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>

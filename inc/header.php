@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <script defer src="JS/year.js"></script>
+    <script defer src="JS/script.js"></script>
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/headerfooter.css" />
     <title>The Glow Light</title>
@@ -39,7 +39,7 @@
             <i class="fas fa-phone"></i>
             <div>
               <p class="head-info-heading">Call Us</p>
-              <p class="head-info-content text">07577 425 727</p>
+              <p class="head-info-content text">07577&nbsp;425&nbsp;727</p>
             </div>
           </div>
           <div class="head-info-container">
@@ -55,13 +55,23 @@
     <!----------------->
     <!-- Navigation -->
     <!----------------->
-    <nav class="main-nav">
-      <ul class="main-nav-list">
-        <li><a class="main-nav-link" href="home.php">Home</a></li>
-        <li><a class="main-nav-link" href="services.php">Services</a></li>
-        <li><a class="main-nav-link" href="aboutus.php">About Us</a></li>
-        <li><a class="main-nav-link" href="testimonials.php">Testimonials</a></li>
-        <?php displayLinks(); ?>
-      </ul>
+    <nav class="main-nav-section">
+      <div class="main-nav-container">
+        <button class="btn-mobile-nav-open">
+          <i class=" fas fa-bars btn-mobile-nav-open-icon" name="menu-open-icon"></i>
+        </button>
+        <div class="main-nav">
+          <button class="btn-mobile-nav-close">
+            <i class=" fas fa-times btn-mobile-nav-close-icon" name="menu-close-icon"></i>
+          </button>
+          <ul class="main-nav-list">
+            <li><a class="main-nav-link" href="home.php">Home</a></li>
+            <li><a class="main-nav-link" href="services.php">Services</a></li>
+            <li><a class="main-nav-link" href="aboutus.php">About Us</a></li>
+            <li><a class="main-nav-link" href="testimonials.php">Testimonials</a></li>
+            <?php displayLinks(); ?>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>

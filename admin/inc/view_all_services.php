@@ -4,7 +4,7 @@
     <span class="page-heading-line"></span>
   </div>
   <a href="admin-services.php?source=add_service" class="btn--cta services-create-btn">
-  <i class="fas fa-plus"></i>
+    <i class="fas fa-plus"></i>
     <span>Create Service</span>
   </a>
 </div>
@@ -31,7 +31,7 @@
   else{
 ?>
 
-<table class="hor-table"> 
+<table class="hor-table view-all-services-table"> 
   <thead class="hor-table-head">
     <tr>
       <th>ID</th>

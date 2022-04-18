@@ -33,7 +33,7 @@
     }
     else{
     ?>
-      <table class="users-table"> 
+      <table class="users-table comment-table"> 
         <thead class="users-table-head" >
           <tr>
             <th>Comment ID</th>

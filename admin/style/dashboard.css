@@ -1,6 +1,7 @@
 .card-selection-list {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.8rem;
 }
 
@@ -35,12 +36,12 @@
 }
 
 .cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 4.8rem;
-  justify-content: space-between;
+  width: 100%;
   margin-bottom: 4.8rem;
 }
-
 .card {
   position: relative;
   width: 15rem;
@@ -58,6 +59,7 @@
 
 .card-clickable:link,
 .card-clickable:visited {
+  width: 15rem;
   box-shadow: 3px 3px 7px 3px #d3ced2;
   position: relative;
   overflow: hidden;
@@ -102,12 +104,56 @@
 .charts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 4.8rem;
-  column-gap: 4.8rem;
+  justify-items: space-between;
+  gap: 3.2rem;
 }
 
 .chart {
+  min-height: 30rem;
   border: 1px solid black;
   justify-items: center;
   box-shadow: 3px 3px 7px 3px #d3ced2;
+}
+
+/* /////////////////////////////// */
+/* Informācijas paneļa media */
+/* /////////////////////////////// */
+
+/* ****************** */
+/* Zem 1200px */
+/* ****************** */
+
+@media (max-width: 75em) {
+  .cards {
+    margin-bottom: 2.4rem;
+  }
+  .charts {
+    transform: scale(0.85) translate(-5%, -5%);
+    gap: 3rem;
+  }
+}
+
+/* ****************** */
+/* Zem 704px  */
+/* ****************** */
+
+@media (max-width: 44em) {
+  .charts {
+    grid-template-columns: 1fr;
+    max-width: 60rem;
+  }
+}
+
+/* ****************** */
+/* Zem 544px 
+/* ****************** */
+
+@media (max-width: 34em) {
+  .cards {
+    grid-template-columns: max-content max-content;
+    justify-content: space-around;
+  }
+  .charts {
+    max-width: 50rem;
+  }
 }

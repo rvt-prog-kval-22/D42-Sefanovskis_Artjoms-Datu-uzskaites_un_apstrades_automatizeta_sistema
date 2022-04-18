@@ -26,7 +26,7 @@
     }
     else{ 
     ?>
-      <table class="users-table"> 
+      <table class="users-table view-cars-table"> 
         <thead class="users-table-head" >
           <tr>
             <th>Number</th> 

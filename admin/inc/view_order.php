@@ -112,7 +112,7 @@
                 <th>Email</th>
               </tr>
             </thead>
-            <tbody>   
+            <tbody class="hor-table-body view-orderuser-table">   
               <tr>
                 <td><?php echo $user_id; ?></td>
                 <td><?php echo $user_fullname; ?></td>
@@ -126,7 +126,7 @@
       <tr>
         <td class="ver-table-label">Car:</td>
         <td>
-          <table class="hor-table inner-table"> 
+          <table class="hor-table inner-table view-ordercar-table"> 
             <thead class="hor-table-head" >
               <tr>
                 <th>ID</th>
@@ -139,7 +139,7 @@
                 <th>Details</th>
               </tr>
             </thead>
-            <tbody>   
+            <tbody class="hor-table-body">   
               <tr>
                 <td><?php echo $car_id; ?></td>
                 <td><?php echo $car_producer; ?></td>

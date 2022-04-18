@@ -111,7 +111,7 @@
       <tr>
         <td class="user-data-label">Details(optional): </td>
         <td>
-          <textarea placeholder="Write something here about your car that is worth knowing when we will work with your car." class="text user-data-input-textfield" name="car_details" rows="10"></textarea>
+          <textarea placeholder="Write something here about your car that is worth knowing when we will work with your car." class="text user-data-input-textfield" name="car_details"></textarea>
         </td>
       </tr>
     </table>
