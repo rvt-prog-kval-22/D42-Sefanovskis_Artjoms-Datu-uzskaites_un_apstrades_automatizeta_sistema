@@ -28,14 +28,11 @@
       $comment_isanonyme = 1;
     }
     else{
-      $comment_isanonyme = 0;
+      $comment_isanonyme = 0; 
     }
 
     if(validateRating($comment_rating)){
       $errors['rating'] = validateRating($comment_rating);
-    }
-    if(validateField($comment_content)){
-      $errors["comment"] = validateField($comment_content);
     }
 
     if(empty($errors)){
@@ -76,17 +73,17 @@
         </td>
       </tr>
       <tr>
-        <td class="table-data-label">Rating(1-5):</td>
+        <td class="table-data-label">Rating(1-5)*:</td>
         <td>
           <input class="review-rating" type="number" name="comment_rating">
-          <p><?php echo $errors['rating'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['rating'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="table-data-label">Your review:</td>
         <td>
-          <textarea class="review-textarea text" name="comment_content" rows="15"></textarea>
-          <p><?php echo $errors['comment'] ?? ''; ?></p>
+          <textarea class="review-textarea text" name="comment_content" rows="15"><?php echo $comment_content ?? ""; ?></textarea>
+          <p class="error-message"><?php echo $errors['comment'] ?? ''; ?></p>
         </td>
       </tr>
     </table>
@@ -94,7 +91,7 @@
     <div class="review-create-btn-box">
       <button class="btn--cta" name="submit_review" type="submit">
         <i class="fas fa-plus"></i>
-        <span>Create</span>
+        <span>Submit</span>
       </button>
     </div >
   </form>

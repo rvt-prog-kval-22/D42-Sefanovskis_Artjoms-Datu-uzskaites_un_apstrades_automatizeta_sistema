@@ -177,7 +177,7 @@
         <?php 
           $query = "select COUNT(comment_id) as reviews, round(AVG(comment_rating),1) as rating ";
           $query.= "FROM `comments` ";
-          $query.= "WHERE comment_topic_id = 1 and comment_status = 'approve' ";
+          $query.= "WHERE comment_topic_id = 1 and comment_status = 'approved' ";
           $query.= "GROUP BY comment_topic_id";
 
           $select_metrics = mysqli_query($conn,$query);
@@ -199,7 +199,7 @@
           $query = "select c.comment_rating, c.comment_date, c.comment_content, c.comment_isanonyme, u.user_first, u.user_last ";
           $query.= "FROM `comments` as c ";
           $query.= "JOIN users as u on u.user_id = c.comment_user_id ";
-          $query.= "WHERE comment_topic_id = 1 and comment_status = 'approve' ";
+          $query.= "WHERE comment_topic_id = 1 and comment_status = 'approved' ";
           $query.= "order by c.comment_date desc ";
           $query.= "limit 4";
           $select_comments = mysqli_query($conn,$query);

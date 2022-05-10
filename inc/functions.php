@@ -50,6 +50,7 @@ function validateEmail($email){
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       return "Please enter valid email";
     }
+    //uztaisīt pārbaudi vai epasts nav aizņemts 
     else return;
   }
 }

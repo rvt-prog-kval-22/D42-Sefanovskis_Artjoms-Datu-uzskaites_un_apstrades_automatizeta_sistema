@@ -19,6 +19,8 @@
     <script defer src="JS/script.js"></script>
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/headerfooter.css" />
+
+    <link rel="icon" href="img/icons/Logo-Web.png">
     <title>The Glow Light</title>
   </head>
   <body>

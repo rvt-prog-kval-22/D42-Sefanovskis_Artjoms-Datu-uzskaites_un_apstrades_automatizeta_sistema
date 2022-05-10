@@ -17,7 +17,8 @@
     $query.= "FROM orders as o ";
     $query.= "JOIN services as s on s.service_id = o.order_service_id ";
     $query.= "JOIN cars as c on c.car_id = o.order_car_id ";
-    $query.= "WHERE o.order_user_id = $user_id and o.order_status in ('Recieved', 'In Progress', 'Waiting for Payment')";
+    $query.= "WHERE o.order_user_id = $user_id and o.order_status in ('Recieved', 'In Progress', 'Waiting for Payment') ";
+    $query.= "order by o.order_id desc";
 
     $select_active_orders = mysqli_query($conn,$query);
 

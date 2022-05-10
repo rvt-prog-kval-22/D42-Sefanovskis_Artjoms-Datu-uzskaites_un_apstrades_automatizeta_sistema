@@ -74,19 +74,19 @@ if(isset($_POST['update_user'])){
 
 <form action="" method="post">
   
-  <label class="input-label" for="user_first">First Name</label>
+  <label class="input-label" for="user_first">First Name*</label>
   <input value="<?php echo $the_user_first ?? $user_first; ?>" type="text" name="user_first" class="text input-field">
   <p class="error-message"><?php echo $errors['first'] ?? ''; ?></p>
 
-  <label class="input-label" for="user_last">Last Name</label>
+  <label class="input-label" for="user_last">Last Name*</label>
   <input value="<?php echo $the_user_last ?? $user_last; ?>" type="text" name="user_last" class="text input-field">
   <p class="error-message"><?php echo $errors['last'] ?? ''; ?></p>
 
-  <label class="input-label" for="user_phone">Phone number</label>
+  <label class="input-label" for="user_phone">Phone number*</label>
   <input value="<?php echo $the_user_phone ?? $user_phone; ?>" type="number" name="user_phone" class="text input-field">
-  <p class="error-message"><?php echo $errors['phone'] ?? ''; ?></p>
+  <p class="error-message"><?php echo $errors['number'] ?? ''; ?></p>
 
-  <label class="input-label" for="user_phone_code">Phone number country code</label>
+  <label class="input-label" for="user_phone_code">Phone number country code*</label>
   <input value="<?php echo $the_user_phone_code ?? $user_phone_code; ?>" type="number" name="user_phone_code" class="text input-field">
   <p class="error-message"><?php echo $errors['code'] ?? ''; ?></p>
 

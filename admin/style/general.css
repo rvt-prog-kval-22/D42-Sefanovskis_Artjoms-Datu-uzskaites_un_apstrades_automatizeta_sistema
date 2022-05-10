@@ -39,6 +39,14 @@ input[type="number"] {
   color: #5b5b5b;
 }
 
+.error-message {
+  margin-bottom: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #e43314;
+  text-transform: uppercase;
+}
+
 .page {
   max-width: 120rem;
   margin: 0 auto 9.6rem auto;

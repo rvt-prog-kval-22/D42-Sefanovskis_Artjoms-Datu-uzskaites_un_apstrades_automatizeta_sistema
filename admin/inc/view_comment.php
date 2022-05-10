@@ -100,7 +100,7 @@
   </table>
   <div class="options-box">
     <?php
-      echo "<a class='where-btn option-approve' href='admin_comments.php?change_to_approve=$comment_id&where=$where'>Approve</a>";
+      echo "<a class='where-btn option-approve' href='admin_comments.php?change_to_approved=$comment_id&where=$where'>Approve</a>";
       echo "<a class='where-btn option-deny' href='admin_comments.php?change_to_deny=$comment_id&where=$where'>Deny</a>";
     ?>
   </div>

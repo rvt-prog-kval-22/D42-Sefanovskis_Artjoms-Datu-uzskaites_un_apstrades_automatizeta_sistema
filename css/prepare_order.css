@@ -41,3 +41,10 @@
 .confirm-btn-box {
   text-align: center;
 }
+
+.error-message {
+  margin-bottom: 0;
+}
+.input-row td {
+  padding-bottom: 1.8rem !important;
+}

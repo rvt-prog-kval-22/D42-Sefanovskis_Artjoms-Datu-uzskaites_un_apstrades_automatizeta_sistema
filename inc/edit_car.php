@@ -36,23 +36,8 @@
         $car_details = "Not mentioned";
       }
 
-      if(validateField($car_model)){
-        $errors["model"] = validateField($car_model);
-      }
-      if(validateField($car_producer)){
-        $errors["producer"] = validateField($car_producer);
-      }
-      if(validateNumberField($car_year)){
-        $errors["year"] = validateNumberField($car_year);
-      }
       if(validateField($car_numbersign)){
         $errors["numbersign"] = validateField($car_numbersign);
-      }
-      if(validateNameField($car_color)){
-        $errors["color"] = validateNameField($car_color);
-      }
-      if(validateNameField($car_interior)){
-        $errors["interior"] = validateNameField($car_interior);
       }
 
       if(empty($errors)){
@@ -79,7 +64,7 @@
   ?>
   <div class="second-header-box">
     <div>
-      <h2 class="second-heading">Update Car</h2>
+      <h2 class="second-heading">Update Car Details</h2>
       <span class="second-header-line"></span>
     </div>
     
@@ -94,45 +79,45 @@
   
     <table class="user-data-box">
       <tr>
+        <td class="user-data-label">Number Sign*: </td>
+        <td>
+          <input class="text user-data-input" name="car_numbersign" value="<?php echo $car_numbersign ?? $db_car_numbersign; ?>">
+          <p class="error-message"><?php echo $errors['numbersign'] ?? ''; ?></p>
+        </td>
+      </tr>
+      <tr>
         <td class="user-data-label">Car Model: </td>
         <td>
           <input class="text user-data-input" name="car_model" type="text" value="<?php echo $car_model ?? $db_car_model; ?>">
-          <p><?php echo $errors['model'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['model'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Producer: </td>
         <td>
           <input class="text user-data-input" name="car_producer" value="<?php echo $car_producer ?? $db_car_producer; ?>">
-            <p><?php echo $errors['producer'] ?? ''; ?></p>  
+            <p class="error-message"><?php echo $errors['producer'] ?? ''; ?></p>  
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Year of Production: </td>
         <td>
           <input class="text user-data-input" name="car_year" value="<?php echo $car_year ?? $db_car_year; ?>">
-          <p><?php echo $errors['year'] ?? ''; ?></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="user-data-label">Number Sign: </td>
-        <td>
-          <input class="text user-data-input" name="car_numbersign" value="<?php echo $car_numbersign ?? $db_car_numbersign; ?>">
-          <p><?php echo $errors['numbersign'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['year'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Color: </td>
         <td>
           <input class="text user-data-input" name="car_color" value="<?php echo $car_color ?? $db_car_color; ?>">
-          <p><?php echo $errors['color'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['color'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Interior Material: </td>
         <td>
           <input class="text user-data-input" name="car_interior" value="<?php echo $car_interior ?? $db_car_interior; ?>">
-          <p><?php echo $errors['interior'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['interior'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>

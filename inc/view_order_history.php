@@ -18,7 +18,8 @@
     $query.= "JOIN services as s on s.service_id = o.order_service_id ";
     $query.= "JOIN cars as c on c.car_id = o.order_car_id ";
     $query.= "LEFT JOIN order_report as r on r.report_order_id = o.order_id ";
-    $query.= "WHERE o.order_user_id = $user_id and o.order_status in ('Completed', 'Canceled')";
+    $query.= "WHERE o.order_user_id = $user_id and o.order_status in ('Completed', 'Canceled') ";
+    $query.= "order by o.order_id desc";
 
     $select_order_history = mysqli_query($conn,$query);
 

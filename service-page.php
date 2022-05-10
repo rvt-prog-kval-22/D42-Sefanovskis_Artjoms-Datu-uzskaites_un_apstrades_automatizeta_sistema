@@ -14,7 +14,7 @@
       $query.= "CASE WHEN c.comment_id is null then 0 ELSE COUNT(c.comment_id) END as service_review, ";
       $query.= "CASE WHEN c.comment_rating is null then 0 ELSE round(AVG(c.comment_rating),1) END as service_rating ";
       $query.= "FROM `services` as s ";
-      $query.= "LEFT JOIN (select* from comments where comment_status = 'approve') as c on c.comment_topic_id = s.service_id ";
+      $query.= "LEFT JOIN (select* from comments where comment_status = 'approved') as c on c.comment_topic_id = s.service_id ";
       $query.= "WHERE s.service_id = $the_service_id ";
       $query.= "GROUP BY s.service_id, s.service_title, s.service_price, s.service_image, s.service_hours, s.service_description";
 
@@ -86,7 +86,7 @@
           $query = "select c.comment_rating, c.comment_date, c.comment_content, c.comment_isanonyme, u.user_first, u.user_last ";
           $query.= "FROM `comments` as c ";
           $query.= "JOIN users as u on u.user_id = c.comment_user_id ";
-          $query.= "WHERE comment_topic_id = $the_service_id  and comment_status = 'approve' ";
+          $query.= "WHERE comment_topic_id = $the_service_id  and comment_status = 'approved' ";
           $query.= "order by c.comment_date desc ";
           $select_comments = mysqli_query($conn,$query);
 

@@ -17,7 +17,8 @@
   </div>
 
   <?php
-    $query = "select*from cars where car_owner_id = $user_id ";
+    $query = "select*from cars ";
+    $query.= "where car_owner_id = $user_id ";
 
     $select_cars = mysqli_query($conn,$query);
 

@@ -24,7 +24,8 @@
     $query = "select c.comment_id, IF(s.service_id = 1,'General',s.service_title) as 'service_title', c.comment_rating, c.comment_content, c.comment_date, IF(c.comment_isanonyme = 0, 'NO', 'YES') as 'comment_isanonyme', c.comment_status ";
     $query.= "FROM comments as c ";
     $query.= "JOIN services as s on s.service_id = c.comment_topic_id ";
-    $query.= "WHERE comment_user_id = $user_id";
+    $query.= "WHERE comment_user_id = $user_id ";
+    $query.= "order by c.comment_id desc";
 
     $select_comments = mysqli_query($conn,$query);
 

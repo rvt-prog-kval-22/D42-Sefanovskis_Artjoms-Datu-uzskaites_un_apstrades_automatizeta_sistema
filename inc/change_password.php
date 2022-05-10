@@ -43,13 +43,13 @@
 </div>
 
 <form action="#" method="post">
-  <label class="text password-change-label" for="password">Enter Password:</label>
+  <label class="password-change-label" for="password">Enter Password:</label>
   <input name="password" class="change-password-inputfield" type="password">
-  <p class="error-message"><?php echo $errors['password'] ?? '&nbsp;'; ?></p>
+  <p class="error-message marbo-1-8"><?php echo $errors['password'] ?? '&nbsp;'; ?></p>
 
-  <label class="text password-change-label" for="password_reenter">Re-enter Password:</label>
+  <label class="password-change-label" for="password_reenter">Re-enter Password:</label>
   <input name="password_reenter" class="change-password-inputfield" type="password">
-  <p class="error-message"><?php echo $errors['reenter'] ?? '&nbsp;'; ?></p>
+  <p class="error-message marbo-1-8"><?php echo $errors['reenter'] ?? '&nbsp;'; ?></p>
 
   <button name="change-password" type="submit" class="btn--cta">Confirm</button>
 </form>

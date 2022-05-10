@@ -6,6 +6,16 @@
           All rights reserved.
         </p>
       </div>
+      <!-- Code to activate summernote editor -->
+      <script>
+        $(document).ready(function() {
+          $('#summernote').summernote();
+        });
+
+        $('#summernote').summernote({
+          height: 150,     
+        });
+      </script>
     </footer>
   </body>
 </html>

@@ -53,7 +53,7 @@
 
   <div class="btn--submit">
     <button class="btn--cta" type="submit" name="create_user">
-      <i class="fa fa-plus"></i>
+      <i class="fa fa-user-plus"></i>
       <span>Create User</span>
     </button>  
   </div>

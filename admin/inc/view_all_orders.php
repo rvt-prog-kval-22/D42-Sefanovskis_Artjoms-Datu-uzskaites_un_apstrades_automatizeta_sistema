@@ -54,13 +54,13 @@
 </div>
 
 <div class="where-box">
-  <a class="where-btn" href="admin_orders.php?where=all">View All</a>
-  <a class="where-btn" href="admin_orders.php?where=recieved">View Recieved</a>
-  <a class="where-btn" href="admin_orders.php?where=progress">View In Progress</a>
-  <a class="where-btn" href="admin_orders.php?where=waiting">View Waiting for Payment</a>
-  <a class="where-btn" href="admin_orders.php?where=completed">View Completed</a>
-  <a class="where-btn" href="admin_orders.php?where=canceled">View Canceled</a>
-  <a class="where-btn" href="admin_orders.php?where=report">Need Report</a>
+  <a class="where-btn <?php if($where == 'all'){ echo "where-btn-active";}?>" href="admin_orders.php?where=all">View All</a>
+  <a class="where-btn <?php if($where == 'recieved'){ echo "where-btn-active";}?>" href="admin_orders.php?where=recieved">View Recieved</a>
+  <a class="where-btn <?php if($where == 'progress'){ echo "where-btn-active";}?>" href="admin_orders.php?where=progress">View In Progress</a>
+  <a class="where-btn <?php if($where == 'waiting'){ echo "where-btn-active";}?>" href="admin_orders.php?where=waiting">View Waiting for Payment</a>
+  <a class="where-btn <?php if($where == 'completed'){ echo "where-btn-active";}?>" href="admin_orders.php?where=completed">View Completed</a>
+  <a class="where-btn <?php if($where == 'canceled'){ echo "where-btn-active";}?>" href="admin_orders.php?where=canceled">View Canceled</a>
+  <a class="where-btn <?php if($where == 'report'){ echo "where-btn-active";}?>" href="admin_orders.php?where=report">Need Report</a>
 </div>
 
 <?php

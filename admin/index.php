@@ -75,14 +75,14 @@
     ) AS 'monthpopular',
     (SELECT s.service_title 
 	  FROM comments as c JOIN services as s on s.service_id = c.comment_topic_id 
-	  WHERE c.comment_topic_id <> 1 and c.comment_status = 'approve'
+	  WHERE c.comment_topic_id <> 1 and c.comment_status = 'approved'
 	  GROUP by s.service_id 
 	  ORDER BY AVG(c.comment_rating) DESC
 	  limit 1
     ) AS 'best',
     (SELECT s.service_title 
 	  FROM comments as c JOIN services as s on s.service_id = c.comment_topic_id 
-	  WHERE c.comment_topic_id <> 1 and c.comment_status = 'approve'
+	  WHERE c.comment_topic_id <> 1 and c.comment_status = 'approved'
 	  GROUP by s.service_id 
 	  ORDER BY AVG(c.comment_rating) ASC
 	  limit 1
@@ -377,7 +377,7 @@
   <?php
     $query4 = "select (month(comment_date)-1) as 'month', COUNT(comment_id) as 'comments'
     FROM comments
-    WHERE comment_status = 'approve' 
+    WHERE comment_status = 'approved' 
       AND comment_date > DATE_ADD(now(), INTERVAL -1 year)
     GROUP BY month(comment_date)";
 

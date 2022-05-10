@@ -30,6 +30,18 @@
   color: #f3f3f3;
 }
 
+.where-btn-active:link,
+.where-btn-active:visited {
+  background-color: #555;
+  color: #f3f3f3;
+}
+
+.where-btn-active:hover,
+.where-btn-active:active {
+  color: #555;
+  background: none;
+}
+
 .inner-table tbody tr:nth-child(odd) {
   background-color: #f3f3f3;
 }
@@ -68,12 +80,6 @@
 
 .report-textarea {
   margin-bottom: 0.8rem;
-}
-
-.error-message {
-  margin-bottom: 1.6rem;
-  color: #555;
-  font-size: 1.4rem;
 }
 
 /* ****************** */

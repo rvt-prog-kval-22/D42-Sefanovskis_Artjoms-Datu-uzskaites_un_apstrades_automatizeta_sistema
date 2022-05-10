@@ -1,3 +1,7 @@
+.error-message {
+  margin-bottom: 0;
+}
+
 .profile-main {
   margin: 1.8rem auto;
   padding-bottom: 9.6rem;
@@ -91,6 +95,7 @@
 
 .password-change-label {
   display: block;
+  font-size: 1.8rem;
   margin-bottom: 0.8rem;
 }
 
@@ -98,14 +103,6 @@
   width: 25rem;
   height: 2.4rem;
   margin-bottom: 0.8rem;
-}
-
-.error-message {
-  margin-bottom: 1.8rem;
-  color: #111;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  font-weight: 500;
 }
 
 .user-data-input {

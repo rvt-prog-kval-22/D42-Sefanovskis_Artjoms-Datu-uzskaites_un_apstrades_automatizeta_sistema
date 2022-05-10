@@ -16,6 +16,12 @@ btnNavClose.addEventListener("click", function () {
 /* /////////////////////////////// */
 /* Kods atbildīgs par pašreizējā gada izvadi mājaslapas kājenē 
 /* /////////////////////////////// */
-const yearEl = document.querySelector(".year");
+const year = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
-yearEl.textContent = currentYear;
+year.textContent = currentYear;
+
+/* /////////////////////////////// */
+/* Kods atbildīgs par šodienas, kā minimālā datuma, iestatīšanu pasūtījumu pieteikšanas kalendārā 
+/* /////////////////////////////// */
+const today = new Date().toISOString().split("T")[0];
+document.getElementsByName("order_date")[0].setAttribute("min", today);

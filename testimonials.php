@@ -19,7 +19,7 @@
     <?php
       $query = "select COUNT(comment_id) as 'Review_Count', round(AVG(comment_rating),1) as 'Comment_Rating' "; 
       $query.= "FROM comments ";
-      $query.= "WHERE comment_topic_id like 1 and comment_status = 'approve'";
+      $query.= "WHERE comment_topic_id like 1 and comment_status = 'approved'";
       $query.= "GROUP BY comment_topic_id";
 
       $select_metrics = mysqli_query($conn,$query);
@@ -42,7 +42,7 @@
     $query.= "from comments as comments ";
     $query.= "inner join users as users ";
     $query.= "on comments.comment_user_id = users.user_id ";
-    $query.= "where comments.comment_topic_id = 1 and comment_status = 'approve' ";
+    $query.= "where comments.comment_topic_id = 1 and comment_status = 'approved' ";
     $query.= "order by comments.comment_date desc ";
 
     $select_comments = mysqli_query($conn,$query);

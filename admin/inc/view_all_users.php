@@ -11,7 +11,8 @@
   </div>
 
 <?php
-$query = "select*from users";
+$query = "select*from users ";
+$query.= "order by user_id desc";
 $select_users = mysqli_query($conn,$query);
 
 if(mysqli_num_rows($select_users) == 0){

@@ -12,7 +12,7 @@
         break;
 
       case 'approve':
-        $where_statement = "where c.comment_status = 'approve' ";
+        $where_statement = "where c.comment_status = 'approved' ";
         break;
 
       case 'deny':
@@ -115,7 +115,7 @@
         echo "<td>{$comment_date}</td>";
         echo "<td>{$comment_isanonyme}</td>";
         echo "<td>{$comment_status}</td>";
-        echo "<td><a href='admin_comments.php?change_to_approve=$comment_id&where=$where'>Approve</a></td>";
+        echo "<td><a href='admin_comments.php?change_to_approved=$comment_id&where=$where'>Approve</a></td>";
         echo "<td><a href='admin_comments.php?change_to_deny=$comment_id&where=$where'>Deny</a></td>";
         echo "<td><a href='admin_comments.php?source=view_comment&c_id=$comment_id&where=$where'>Full View</a></td>";
         echo "<td><a href='admin_comments.php?delete=$comment_id&where=$where'>Delete</a></td>";
@@ -127,11 +127,11 @@
 <?php } ?>
 
 <?php
-  if(isset($_GET['change_to_approve'])){
-    $the_comment_id = $_GET['change_to_approve'];
+  if(isset($_GET['change_to_approved'])){
+    $the_comment_id = $_GET['change_to_approved'];
     global $conn;
 
-    $query = "update comments set comment_status = 'approve' ";
+    $query = "update comments set comment_status = 'approved' ";
     $query.= "where comment_id = $the_comment_id";
     $change_to_approve_query = mysqli_query($conn,$query);
     header("Location: admin_comments.php?where=$where");

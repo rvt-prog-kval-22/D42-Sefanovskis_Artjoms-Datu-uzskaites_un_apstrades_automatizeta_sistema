@@ -26,9 +26,3 @@
 .service-description:focus {
   outline: none;
 }
-
-.error-message {
-  margin-bottom: 1.6rem;
-  font-size: 1.6rem;
-  color: #555;
-}

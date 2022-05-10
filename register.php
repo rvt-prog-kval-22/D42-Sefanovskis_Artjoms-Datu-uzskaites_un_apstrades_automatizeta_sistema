@@ -23,6 +23,13 @@
     if(validateEmail($email)){
       $errors["email"] = validateEmail($email);
     }
+    if(empty($errors["email"])){
+      $check_email = "select * from users where user_email = '$email' ";
+      $check_email_query = mysqli_query($conn,$check_email);
+      if(mysqli_num_rows($check_email_query) != 0){
+        $errors["email"] = "Email already in use";
+      }
+    }
     if(validatenumberField($phone)){
       $errors["phone"] = validatenumberField($phone);
     }
@@ -84,36 +91,39 @@
   <div class="login-box">
       <form action="#" method="post">
 
-        <label class="text login-label" for="firstname">First name:</label>
+        <p class="text mandatory-msg">Mandatory fields(*)</p>
+
+
+        <label class="text login-label" for="firstname">First name*:</label>
         <input name="firstname" class="inputfield text" type="text" value="<?php echo $first ?? ''; ?>">
         <p class="error-message"><?php echo $errors['first'] ?? ''; ?></p>
 
-        <label class="text login-label" for="lastname">Last Name:</label>
+        <label class="text login-label" for="lastname">Last Name*:</label>
         <input name="lastname" class="inputfield" type="text" value="<?php echo $last ?? ''; ?>">
         <p class="error-message"><?php echo $errors['last'] ?? ''; ?></p>
 
-        <label class="text login-label" for="email">Email:</label>
+        <label class="text login-label" for="email">Email*:</label>
         <input name="email" class="inputfield" type="email" value="<?php echo $email ?? ''; ?>">
         <p class="error-message"><?php echo $errors['email'] ?? ''; ?></p>
 
-        <label class="text login-label" for="phone">Phone number:</label>
+        <label class="text login-label" for="phone">Phone number*:</label>
         <input name="phone" class="inputfield" type="number" value="<?php echo $phone ?? ''; ?>">
         <p class="error-message"><?php echo $errors['phone'] ?? ''; ?></p>
 
-        <label class="text login-label" for="phone_code">Country code of the number:</label>
+        <label class="text login-label" for="phone_code">Country code of the number*:</label>
         <input name="phone_code" class="inputfield" type="number" value="<?php echo $phone_code ?? ''; ?>">
         <p class="error-message"><?php echo $errors['code'] ?? ''; ?></p>
 
-        <label class="text login-label" for="password">Enter Password:</label>
+        <label class="text login-label" for="password">Enter Password*:</label>
         <input name="password" class="inputfield" type="password">
         <p class="error-message"><?php echo $errors['password'] ?? ''; ?></p>
         
 
-        <label class="text login-label" for="password_reenter">Re-enter Password:</label>
+        <label class="text login-label" for="password_reenter">Re-enter Password*:</label>
         <input name="password_reenter" class="inputfield" type="password">
         <p class="error-message"><?php echo $errors['reenter'] ?? ''; ?></p>
 
-        <button name="register" type="submit" class="btn--cta">Register</button>
+        <button name="register" type="submit" class="btn--cta"><i class="fa fa-user-plus"></i> Register</button>
       </form>
   </div>
 </main>

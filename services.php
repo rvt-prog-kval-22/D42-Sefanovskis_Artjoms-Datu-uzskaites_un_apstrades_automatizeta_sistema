@@ -11,7 +11,7 @@
   <?php 
     $query = "select s.service_id, s.service_title, s.service_price, s.service_image, COUNT(c.comment_id) as service_reviews, CASE WHEN c.comment_rating is null then 0 ELSE round(AVG(c.comment_rating),1) END as service_rating ";
     $query.= "FROM `services` as s ";
-    $query.= "LEFT JOIN (select* from comments where comment_status = 'approve') as c on c.comment_topic_id = s.service_id ";
+    $query.= "LEFT JOIN (select* from comments where comment_status = 'approved') as c on c.comment_topic_id = s.service_id ";
     $query.= "WHERE s.service_id <> 1 ";
     $query.= "GROUP BY s.service_id, s.service_title, s.service_price, s.service_image";
     $select_services = mysqli_query($conn,$query);

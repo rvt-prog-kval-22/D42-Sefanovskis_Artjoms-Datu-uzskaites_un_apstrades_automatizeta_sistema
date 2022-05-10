@@ -84,24 +84,24 @@
 
 <form action="" method="post" enctype="multipart/form-data">
   
-  <label class="input-label" for="service_title">Title</label>
+  <label class="input-label" for="service_title">Title*</label>
   <input value="<?php echo $service_title; ?>" type="text" name="service_title" class="text input-field">
   <p class="error-message"><?php echo $errors['title'] ?? ''; ?></p>
 
-  <label class="input-label" for="service_price">Price</label>
+  <label class="input-label" for="service_price">Price*</label>
   <input value="<?php echo $service_price; ?>" type="text" name="service_price" class="text input-field">
   <p class="error-message"><?php echo $errors['price'] ?? ''; ?></p>
 
-  <label class="input-label" for="service_hours">Estimated Labour hours</label>
+  <label class="input-label" for="service_hours">Estimated Labour hours*</label>
   <input value="<?php echo $service_hours; ?>" type="text" name="service_hours" class="text input-field">
   <p class="error-message"><?php echo $errors['hours'] ?? ''; ?></p>
 
-  <label class="input-label" for="service_image">Service Image</label>
+  <label class="input-label" for="service_image">Service Image*</label>
   <img width="100px" src="../img/services-images/<?php echo $service_image; ?>" alt="Main image of the service">
   <input class="input-image" type="file" name="service_image">
 
-  <label class="input-label" for="service_description">Description</label>
-  <textarea class="text service-description" name="service_description" rows="10"><?php echo $service_description; ?>
+  <label class="input-label" for="service_description">Description*</label>
+  <textarea id="summernote" class="text service-description" name="service_description" rows="10"><?php echo $service_description; ?>
   </textarea>  
   <p class="error-message"><?php echo $errors['description'] ?? ''; ?></p>
 

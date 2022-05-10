@@ -36,9 +36,6 @@
       if(validateRating($the_comment_rating)){
         $errors['rating'] = validateRating($the_comment_rating);
       }
-      if(validateField($the_comment_content)){
-        $errors["comment"] = validateField($the_comment_content);
-      }
 
       if(empty($errors)){
         $query = "update comments set ";
@@ -93,10 +90,10 @@
         <td><input type="checkbox" class="text user-data-input-checkbox" <?php if($the_comment_isanonyme ?? $comment_isanonyme){echo "checked";}?> name="comment_isanonyme"></td>
       </tr>
       <tr>
-        <td class="user-data-label">Comment Rating (1-5): </td>
+        <td class="user-data-label">Comment Rating (1-5)*: </td>
         <td>
           <input type="number" class="text rating-input" value="<?php echo $the_comment_rating ?? $comment_rating; ?>" name="comment_rating">
-          <p><?php echo $errors['rating'] ?? '' ?></p>
+          <p class="error-message"><?php echo $errors['rating'] ?? '' ?></p>
         </td>
       </tr>
 
@@ -104,14 +101,13 @@
         <td class="user-data-label">Comment: </td>
         <td>
           <textarea class="text user-data-input-textfield" rows="10" name="comment_content"><?php echo $the_comment_content ?? $comment_content; ?></textarea>
-          <?php echo $errors['comment'] ?? ''; ?>
         </td>
       </tr>
     </table>
     <div class="update-profile-btn-box">
       <button type="submit" name="edit_comment" class="btn--cta">
-        <i class="fas fa-pen"></i>  
-        Edit
+        <i class="fa fa-check"></i>
+        Submit
       </button>
     </div>
 

@@ -15,24 +15,8 @@
       $car_interior = mysqli_real_escape_string($conn,$_POST['car_interior']);
       $car_details = mysqli_real_escape_string($conn,$_POST['car_details']);
 
-
-      if(validateField($car_model)){
-        $errors["model"] = validateField($car_model);
-      }
-      if(validateField($car_producer)){
-        $errors["producer"] = validateField($car_producer);
-      }
-      if(validateNumberField($car_year)){
-        $errors["year"] = validateNumberField($car_year);
-      }
       if(validateField($car_numbersign)){
         $errors["numbersign"] = validateField($car_numbersign);
-      }
-      if(validateNameField($car_color)){
-        $errors["color"] = validateNameField($car_color);
-      }
-      if(validateNameField($car_interior)){
-        $errors["interior"] = validateNameField($car_interior);
       }
       
       if(empty($errors)){
@@ -67,49 +51,49 @@
   
     <table class="user-data-box">
       <tr>
+        <td class="user-data-label">Number Sign*: </td>
+        <td>
+          <input value="<?php echo $car_numbersign ?? ''; ?>" class="text user-data-input" name="car_numbersign" type="text">
+          <p class="error-message"><?php echo $errors['numbersign'] ?? ''; ?></p>
+        </td>
+      </tr>
+      <tr>
         <td class="user-data-label">Producer: </td>
         <td>
           <input value="<?php echo $car_producer ?? ''; ?>" class="text user-data-input" name="car_producer">
-          <p><?php echo $errors['producer'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['producer'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Car Model: </td>
         <td>
           <input value="<?php echo $car_model ?? ''; ?>" class="text user-data-input" name="car_model" type="text">
-          <p><?php echo $errors['model'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['model'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Year of Production: </td>
         <td>
           <input value="<?php echo $car_year ?? ''; ?>" class="text user-data-input" name="car_year" >
-          <p><?php echo $errors['year'] ?? ''; ?></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="user-data-label">Number Sign: </td>
-        <td>
-          <input value="<?php echo $car_numbersign ?? ''; ?>" class="text user-data-input" name="car_numbersign" type="text">
-          <p><?php echo $errors['numbersign'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['year'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Color: </td>
         <td>
           <input value="<?php echo $car_color ?? ''; ?>" class="text user-data-input" name="car_color">
-          <p><?php echo $errors['color'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['color'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Interior Material: </td>
         <td>
           <input value="<?php echo $car_interior ?? ''; ?>" class="text user-data-input" name="car_interior">
-          <p><?php echo $errors['interior'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['interior'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
-        <td class="user-data-label">Details(optional): </td>
+        <td class="user-data-label">Details: </td>
         <td>
           <textarea placeholder="Write something here about your car that is worth knowing when we will work with your car." class="text user-data-input-textfield" name="car_details"></textarea>
         </td>
@@ -118,7 +102,7 @@
     <div class="update-profile-btn-box">
       <button type="submit" name="add_car" class="btn--cta">
         <i class="fas fa-plus"></i>  
-        Submit
+        Add
       </button>
     </div>
 

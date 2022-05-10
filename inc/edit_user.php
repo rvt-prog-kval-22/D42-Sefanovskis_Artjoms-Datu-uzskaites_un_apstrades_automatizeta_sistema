@@ -78,43 +78,43 @@
   
     <table class="user-data-box">
       <tr>
-        <td class="user-data-label">First Name: </td>
+        <td class="user-data-label">First Name*: </td> 
         <td>
           <input type="text" class="text user-data-input" name="first_name" type="text" value="<?php echo $the_first_name ?? $first_name; ?>">
-          <p><?php echo $errors['first'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['first'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
-        <td class="user-data-label">Last Name: </td>
+        <td class="user-data-label">Last Name*: </td>
         <td>
           <input type="text" class="text user-data-input" name="last_name" value="<?php echo $the_last_name ?? $last_name; ?>">
-          <p><?php echo $errors['last'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['last'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
-        <td class="user-data-label">Email: </td>
+        <td class="user-data-label">Email*: </td>
         <td>
           <input type="email" class="text user-data-input" name="email" value="<?php echo $the_email ?? $email; ?>">
-          <p><?php echo $errors['email'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['email'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
-        <td class="user-data-label">Phone: </td>
+        <td class="user-data-label">Phone*: </td>
         <td>
           <input type="number" class="text user-data-input" name="phone" value="<?php echo $the_phone ?? $phone; ?>">
-          <p><?php echo $errors['phone'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['phone'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
-        <td class="user-data-label">Phone Code: </td>
+        <td class="user-data-label">Phone Code*: </td>
         <td>
           <input type="number" class="text user-data-input" name="phone_code" value="<?php echo $the_phone_code ?? $phone_code; ?>">
-          <p><?php echo $errors['code'] ?? ''; ?></p>
+          <p class="error-message"><?php echo $errors['code'] ?? ''; ?></p>
         </td>
       </tr>
     </table>
     <div class="update-profile-btn-box">
-      <button type="submit" name="update_user" class="btn--cta">Submit</button>
+      <button type="submit" name="update_user" class="btn--cta"><i class="fa fa-check"></i> Submit</button>
     </div>
 
   </form>

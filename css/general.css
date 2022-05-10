@@ -70,6 +70,18 @@ input[type="number"] {
   font-weight: bold;
 }
 
+.marbo-1-8 {
+  margin-bottom: 1.8rem !important;
+}
+
+.error-message {
+  margin-bottom: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #e43314;
+  text-transform: uppercase;
+}
+
 .lines {
   display: inline-block;
   position: relative;
@@ -172,6 +184,22 @@ input[type="number"] {
 .need-to-login-link:hover,
 .need-to-login-link:active {
   color: #555;
+}
+
+.error-msg-box {
+  padding-top: 4.8rem;
+  padding-bottom: 9.6rem;
+  color: #1a1a1a;
+}
+
+.error-small-msg {
+  font-size: 2.4rem;
+  margin-bottom: 1.8rem;
+}
+
+.error-big-msg {
+  font-size: 6.4rem;
+  text-transform: uppercase;
 }
 
 /* /////////////////////////////// */

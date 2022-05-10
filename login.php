@@ -50,7 +50,7 @@ if (isset($_POST['login'])) {
     else{
       $email_error = validateEmail($email);
     }
-  }
+  } 
 ?>
 
 <main class="container">
@@ -73,7 +73,7 @@ if (isset($_POST['login'])) {
         <p class="error-message"><?php echo $password_error ?? ''; ?></p>
         
         <div class="login-button-box">
-          <button name="login" type="submit" class="btn--cta">Log-In</button>
+          <button name="login" type="submit" class="btn--cta"><i class="fa fa-sign-in"></i> Log-In</button>
           <a class="text link-to-register" href="register.php">Have no account? Register here!</a>
         </div>
       </form>
