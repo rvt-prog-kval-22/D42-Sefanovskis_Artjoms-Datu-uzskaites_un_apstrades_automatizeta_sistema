@@ -26,3 +26,7 @@
 .service-description:focus {
   outline: none;
 }
+
+.note-editable {
+  padding-left: 3rem !important;
+}

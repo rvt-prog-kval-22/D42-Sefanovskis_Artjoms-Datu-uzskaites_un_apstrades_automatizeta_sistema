@@ -13,7 +13,7 @@
         });
 
         $('#summernote').summernote({
-          height: 150,     
+          height: 200,     
         });
       </script>
     </footer>

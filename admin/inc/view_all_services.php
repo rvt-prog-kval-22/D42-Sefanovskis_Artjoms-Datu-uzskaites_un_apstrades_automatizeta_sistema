@@ -20,7 +20,7 @@
   s.service_description,
   s.service_image
   from services as s 
-  LEFT JOIN (select*from comments where comment_status = 'approve') as c on c.comment_topic_id = s.service_id
+  LEFT JOIN (select*from comments where comment_status = 'approved') as c on c.comment_topic_id = s.service_id
   where service_id <> 1 
   GROUP BY s.service_id";
   $select_services = mysqli_query($conn,$querry);

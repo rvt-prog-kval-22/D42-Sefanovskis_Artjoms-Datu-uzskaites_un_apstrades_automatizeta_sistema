@@ -101,8 +101,7 @@
   <input class="input-image" type="file" name="service_image">
 
   <label class="input-label" for="service_description">Description*</label>
-  <textarea id="summernote" class="text service-description" name="service_description" rows="10"><?php echo $service_description; ?>
-  </textarea>  
+  <textarea id="summernote" class="text service-description" name="service_description" rows="10"><?php echo $service_description; ?></textarea>  
   <p class="error-message"><?php echo $errors['description'] ?? ''; ?></p>
 
   <div class="btn--submit">
