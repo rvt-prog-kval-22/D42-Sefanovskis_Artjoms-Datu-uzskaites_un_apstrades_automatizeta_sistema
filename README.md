@@ -24,7 +24,7 @@ Projektā tiek izmantots:
 
 
 ## Uzstādīšanas instrukcijas
-Lai piekļūtu pie strādājoša projekta sekojiet saitei: [Kad tiks izveidots kvalifikācijas darba projekts, tas tiks izvietots uz bezmaksas hostinga un būs pieejams ikvienam]()
+Lai piekļūtu pie strādājoša projekta sekojiet saitei: [Šeit](https://kvaldarbstgl.000webhostapp.com/)
 
 ### Vai 
 1. Lejupielādēt programmatūru ar kuras palīdzību mājaslapa strādās uz lokālā datora - [Xampp](https://www.apachefriends.org/index.html)
