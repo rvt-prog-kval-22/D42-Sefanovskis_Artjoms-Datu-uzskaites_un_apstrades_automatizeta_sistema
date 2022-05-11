@@ -9,6 +9,7 @@ Projektā tiek izmantots:
 - CSS
 - PHP
 - SQL
+- JavaScript
 
 ## Izmantotie avoti
 [W3School](https://www.w3schools.com/html/default.asp) - tika ņemts example html kods.
