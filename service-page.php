@@ -45,11 +45,11 @@
               <span class="text service-review-score"><strong><?php echo round($service_rating,1); ?>/5</strong></span>
               <span class="text service-review-count">(<?php echo $service_review; ?> Reviews)</span>
             </div>
-            <div class="services-header-box">
-              <h2 class="services-header">
+            <div class="second-header-box">
+              <h2 class="second-heading">
               <?php echo $service_title; ?>
               </h2>
-              <span class="services-header-line"></span>
+              <span class="second-header-line"></span>
             </div>
             <div class="service-price">
               <span class="service-name">
@@ -77,7 +77,9 @@
 
       <section class="services-descriptoin-section">
         <h3 class="service-header-h3">Descriptoin</h3>
-        <p class="text services-description"><?php echo $service_description; ?></p>
+        <div class="text services-description">
+          <p ><?php echo $service_description; ?></p>
+        </div>
       </section>
 
       <section class="services-comments-section">
@@ -88,9 +90,14 @@
           $query.= "JOIN users as u on u.user_id = c.comment_user_id ";
           $query.= "WHERE comment_topic_id = $the_service_id  and comment_status = 'approved' ";
           $query.= "order by c.comment_date desc ";
+
           $select_comments = mysqli_query($conn,$query);
 
-          while($row = mysqli_fetch_assoc($select_comments)){ 
+          if(mysqli_num_rows($select_comments) == 0){
+            echo "<h4 class='empty-comments-msg'>Looks like there are no comments here...</h4>";
+          }
+          else{
+            while($row = mysqli_fetch_assoc($select_comments)){ 
             $comment_rating = $row['comment_rating'];
             $comment_date = $row['comment_date'];
             $comment_content = $row['comment_content'];
@@ -114,8 +121,9 @@
                 <p class="comment-content"><?php echo $comment_content; ?></p>
               </div>
             </div>
-
-          <?php 
+            
+            <?php 
+            }
           }
         ?>
         

@@ -133,6 +133,7 @@ input[type="number"] {
   display: flex;
   justify-content: space-between;
   margin-bottom: 3.2rem;
+  position: relative;
 }
 
 .second-heading {
@@ -144,6 +145,9 @@ input[type="number"] {
   display: inline-block;
   border-top: 5px solid #e43314;
   width: 5rem;
+  position: absolute;
+  left: 0;
+  bottom: -0.8rem;
 }
 
 .btn--cta,
@@ -162,6 +166,7 @@ input[type="number"] {
   text-align: center;
   border: #e43314 solid 1px;
   height: fit-content;
+  min-width: fit-content;
 }
 
 .btn--cta:hover,
