@@ -22,7 +22,7 @@
             <h3 class="slide-secondary-heading">
               We don&#39;t just clean it , We detail it!
             </h3>
-            <a class="btn--cta slideshow-btn" href="#"
+            <a class="btn--cta slideshow-btn" href="services.php"
               ><i class="far fa-calendar-alt"></i>Book your appointment
               today</a
             >
@@ -45,7 +45,7 @@
             <h3 class="slide-secondary-heading">
               We work hard so you can look good
             </h3>
-            <a class="btn--cta slideshow-btn" href="#"
+            <a class="btn--cta slideshow-btn" href="services.php"
               ><i class="far fa-calendar-alt"></i>Find out whitch package
               suits you best</a
             >
@@ -69,7 +69,7 @@
               <br />
               like newer before
             </h2>
-            <a class="btn--cta slideshow-btn" href="#"
+            <a class="btn--cta slideshow-btn" href="services.php"
               ><i class="far fa-calendar-alt"></i>Get 20% off your first
               premium package</a
             >

@@ -1,5 +1,10 @@
 <?php include "inc/header.php";?>
 <link rel="stylesheet" href="css/profile.css">
+<?php
+  if(!isset($_SESSION['user_id'])){
+    header("Location: need_to_login.php");
+  }
+?>
 <main class="container profile-main">
   <menu class="profile-menu">
     <ul class="profile-menu-list">
@@ -59,6 +64,10 @@
 
       case 'edit_comment':
         include "inc/edit_comment.php";
+        break;
+
+      case 'check_password':
+        include "inc/check_delete.php";
         break;
           
       default:

@@ -26,7 +26,7 @@
     $errors = [];
 
     if(isset($_POST['confirm_order'])){
-      $the_order_car = $_POST['order_car'];
+      $the_order_car = $_POST['order_car'] ?? 0;
       $order_date = $_POST['order_date'];
       $today = date("Y-m-d");
 
@@ -95,13 +95,23 @@
       <tr class="input-row">
         <td class="user-data-label">Select Car*:</td>
         <td>
-          <select name="order_car">
+          <?php
+          $query4 = "select*from cars where car_owner_id = $user_id";
+
+          $select_any_car = mysqli_query($conn,$query4);
+
+          if(mysqli_num_rows($select_any_car) === 0){
+            echo "<span>Looks like you have no cars, you can add car <a href='profile.php?source=add_car' class='regular-link'>here</a></span>";
+          }
+          else{
+          ?>
+            <select name="order_car">
             <?php
 
             if(!isset($the_order_car)){
               $the_order_car = 0;
             }
-
+            
             if($the_order_car != 0){
               $query2 = "select car_id, car_producer, car_model, car_number_sign ";
               $query2.= "from cars ";
@@ -123,27 +133,25 @@
             ?>
 
             <?php
-              $query3 = "select car_id, car_producer, car_model, car_number_sign ";
-              $query3.= "from cars ";
-              $query3.= "where car_owner_id = $user_id and car_id <> $the_order_car";
-          
-              $select_cars = mysqli_query($conn,$query3);
+            $query3 = "select car_id, car_producer, car_model, car_number_sign ";
+            $query3.= "from cars ";
+            $query3.= "where car_owner_id = $user_id and car_id <> $the_order_car";
+        
+            $select_cars = mysqli_query($conn,$query3);
 
-              if (mysqli_num_rows($select_cars) !== 0) {
-                while($row = mysqli_fetch_assoc($select_cars)){
-                  $car_id = $row['car_id'];
-                  $producer = $row['car_producer'];
-                  $model = $row['car_model'];
-                  $number = $row['car_number_sign'];
-                  echo "<option value='$car_id'>$producer $model $number $car_id</option>";
-                }
+            if (mysqli_num_rows($select_cars) !== 0) {
+              while($row = mysqli_fetch_assoc($select_cars)){
+                $car_id = $row['car_id'];
+                $producer = $row['car_producer'];
+                $model = $row['car_model'];
+                $number = $row['car_number_sign'];
+                echo "<option value='$car_id'>$producer $model $number $car_id</option>";
               }
-            ?>
-          </select>
-          <?php
-            if(mysqli_num_rows($select_cars) === 0){
-              echo "<span class='msg-nocars'>Looks like you have no cars to select from</span>";
             }
+            ?>
+            </select>
+          <?php
+          }
           ?>
         </td>
       </tr>

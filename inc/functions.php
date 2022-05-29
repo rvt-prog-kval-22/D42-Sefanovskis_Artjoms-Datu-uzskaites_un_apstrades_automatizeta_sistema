@@ -62,7 +62,7 @@ function validateNameField($name){
   }
   else{
     if(!preg_match("/^[a-zA-Z]*$/", $name)){
-      return "Invalid characters";
+      return "Please use only english characters";
     }
     else{
       return;
@@ -77,7 +77,7 @@ function validateNumberField($number){
   }
   else{
     if(!is_numeric($number)){
-      return "Invalid characters";
+      return "Please use only numbers";
     }
     else{
       return;

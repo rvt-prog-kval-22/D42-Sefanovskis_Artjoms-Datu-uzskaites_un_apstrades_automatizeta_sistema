@@ -1,5 +1,10 @@
 <?php include "inc/header.php";
 
+
+if(isset($_SESSION['user_id'])){
+  header("Location: profile.php");
+}
+
 $errors = [];
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -30,6 +35,7 @@ if (isset($_POST['login'])) {
           $db_user_password = $row['user_password'];
         }
         if($password === $db_user_password){
+          session_start();
           $_SESSION['user_id'] = $db_user_id;
           $_SESSION['user_first'] = $db_user_first;
           $_SESSION['user_last'] = $db_user_last;

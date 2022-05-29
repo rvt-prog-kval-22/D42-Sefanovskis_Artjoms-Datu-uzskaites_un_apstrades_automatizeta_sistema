@@ -54,6 +54,10 @@ input[type="number"] {
   margin: 0rem auto;
 }
 
+.display-none {
+  display: none;
+}
+
 .grid {
   display: grid;
 }
@@ -148,6 +152,16 @@ input[type="number"] {
   position: absolute;
   left: 0;
   bottom: -0.8rem;
+}
+
+.regular-link:link,
+.regular-link:visited {
+  text-decoration: none;
+  color: #e43314;
+}
+.regular-link:hover,
+.regular-link:active {
+  color: #5b5b5b;
 }
 
 .btn--cta,

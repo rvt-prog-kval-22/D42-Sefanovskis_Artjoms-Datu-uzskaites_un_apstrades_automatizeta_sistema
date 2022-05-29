@@ -1,6 +1,12 @@
 <?php include "inc/header.php";?>
 
 <?php
+  if(isset($_SESSION['user_id'])){
+    header("Location: profile.php");
+  }
+?>
+
+<?php
 
   $errors = [];
 
@@ -12,7 +18,7 @@
     $phone = mysqli_real_escape_string($conn,$_POST['phone']);
     $phone_code = mysqli_real_escape_string($conn,$_POST['phone_code']);
     $password = mysqli_real_escape_string($conn,$_POST['password']);
-    $password_reenter = mysqli_real_escape_string($conn,$_POST['password_reenter']);
+    $password_reenter = mysqli_real_escape_string($conn,$_POST['password_reenter']); 
 
     if(validateNameField($first)){
       $errors["first"] = validateNameField($first);
@@ -59,6 +65,7 @@
         while ($row = mysqli_fetch_assoc($select_user_query)) {
           $db_user_id = $row['user_id'];
         }
+        session_start();
         $_SESSION['user_id'] = $db_user_id;
         $_SESSION['user_first'] = $first;
         $_SESSION['user_last'] = $last;

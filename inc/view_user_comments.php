@@ -37,7 +37,7 @@
       <table class="users-table comment-table"> 
         <thead class="users-table-head" >
           <tr>
-            <th>Comment ID</th>
+            <th>Number</th>
             <th>Topic Title</th> 
             <th>Rating</th>
             <th>Content</th>
@@ -49,7 +49,8 @@
           </tr>
         </thead>
         <tbody class="users-table-body" 
-          <?php  
+          <?php
+          $counter = 1;  
           while ($row = mysqli_fetch_assoc($select_comments)) {
             
             $comment_id = $row['comment_id'];
@@ -61,7 +62,7 @@
             $comment_status = $row['comment_status'];
             
             echo "<tr class='users-table-row'>";
-            echo "<td>$comment_id</td>";
+            echo "<td>$counter</td>";
             echo "<td>$title</td>";
             echo "<td>$comment_rating</td>";
             echo "<td>$comment_content</td>";
@@ -71,6 +72,7 @@
             echo "<td><a href='profile.php?source=edit_comment&comment_id=$comment_id'>Edit</a></td>";
             echo "<td><a href='profile.php?source=view_user_comments&delete=$comment_id'>Delete</a></td>";
             echo "</tr>";
+            $counter++;
           }
           ?>
         </tbody>

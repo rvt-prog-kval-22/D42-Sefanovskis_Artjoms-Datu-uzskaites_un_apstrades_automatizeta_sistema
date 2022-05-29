@@ -60,3 +60,11 @@
 .review-create-btn-box {
   text-align: center;
 }
+
+.star-box {
+  display: flex;
+  gap: 0.8rem;
+  color: #ffa600;
+  font-size: 2.4rem;
+  padding-bottom: 2.4rem;
+}

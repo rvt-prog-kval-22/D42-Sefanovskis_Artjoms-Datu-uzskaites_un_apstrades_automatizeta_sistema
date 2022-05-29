@@ -60,36 +60,17 @@
   gap: 1.8rem;
 }
 
-.covered-password-box {
-  display: inline-block;
-  background-color: #555;
-  color: #fff;
-  height: 1.8rem;
-  width: 17rem;
-}
-
-.btn--password-vision {
-  border: none;
-  background: none;
-  font-size: 2rem;
-  padding-top: 0.2rem;
-}
-
-.btn--password-vision:hover {
-  color: #e43314;
-}
-
 .hidden {
   display: none;
 }
 
-.change-password-link:link,
-.change-password-link:visited {
+.big-red-link:link,
+.big-red-link:visited {
   color: #e43314;
   text-decoration: none;
 }
-.change-password-link:hover,
-.change-password-link:active {
+.big-red-link:hover,
+.big-red-link:active {
   color: #555;
 }
 
@@ -178,6 +159,55 @@
   margin-bottom: 0.8rem;
 }
 
+.star-box {
+  display: flex;
+  gap: 0.8rem;
+  color: #ffa600;
+  font-size: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+
+/* Profila dzēšanas pārbaudes lapa */
+.check-delete-box {
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 12rem;
+  display: flex;
+  gap: 6.4rem;
+}
+
+.check-btn:link,
+.check-btn:visited {
+  text-decoration: none;
+  font-size: 2.4rem;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+}
+
+.check-btn-no:link,
+.check-btn-no:visited {
+  color: #567d46;
+  border: 3px solid #567d46;
+}
+
+.check-btn-yes:link,
+.check-btn-yes:visited {
+  color: #e43314;
+
+  border: 3px solid #e43314;
+}
+
+.check-btn-no:hover,
+.check-btn-no:active {
+  color: #fff;
+  background-color: #567d46;
+}
+
+.check-btn-yes:hover,
+.check-btn-yes:active {
+  color: #fff;
+  background-color: #e43314;
+}
 /* /////////////////////////////// */
 /* Profila sadaļas media */
 /* /////////////////////////////// */

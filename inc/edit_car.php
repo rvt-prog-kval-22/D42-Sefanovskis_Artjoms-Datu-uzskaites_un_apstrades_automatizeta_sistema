@@ -39,6 +39,9 @@
       if(validateField($car_numbersign)){
         $errors["numbersign"] = validateField($car_numbersign);
       }
+      if(validateNumberField($car_year)){
+        $errors["year"] = validateNumberField($car_year);
+      }
 
       if(empty($errors)){
         $query = "update cars set ";
@@ -79,6 +82,11 @@
   
     <table class="user-data-box">
       <tr>
+        <td class="user-data-label">
+          Mandatory&nbsp;Fields&nbsp;(*)
+        </td>
+      </tr>
+      <tr>
         <td class="user-data-label">Number Sign*: </td>
         <td>
           <input class="text user-data-input" name="car_numbersign" value="<?php echo $car_numbersign ?? $db_car_numbersign; ?>">
@@ -89,14 +97,12 @@
         <td class="user-data-label">Car Model: </td>
         <td>
           <input class="text user-data-input" name="car_model" type="text" value="<?php echo $car_model ?? $db_car_model; ?>">
-          <p class="error-message"><?php echo $errors['model'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Producer: </td>
         <td>
           <input class="text user-data-input" name="car_producer" value="<?php echo $car_producer ?? $db_car_producer; ?>">
-            <p class="error-message"><?php echo $errors['producer'] ?? ''; ?></p>  
         </td>
       </tr>
       <tr>
@@ -110,14 +116,12 @@
         <td class="user-data-label">Color: </td>
         <td>
           <input class="text user-data-input" name="car_color" value="<?php echo $car_color ?? $db_car_color; ?>">
-          <p class="error-message"><?php echo $errors['color'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Interior Material: </td>
         <td>
           <input class="text user-data-input" name="car_interior" value="<?php echo $car_interior ?? $db_car_interior; ?>">
-          <p class="error-message"><?php echo $errors['interior'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>

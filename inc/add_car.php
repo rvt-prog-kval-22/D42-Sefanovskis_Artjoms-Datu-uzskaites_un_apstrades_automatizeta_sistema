@@ -18,6 +18,9 @@
       if(validateField($car_numbersign)){
         $errors["numbersign"] = validateField($car_numbersign);
       }
+      if(validateNumberField($car_year)){
+        $errors["year"] = validateNumberField($car_year);
+      }
       
       if(empty($errors)){
         $query = "insert into cars(car_owner_id, car_producer, car_model, car_year, car_number_sign, car_color, car_interior_material, car_details) ";
@@ -51,6 +54,11 @@
   
     <table class="user-data-box">
       <tr>
+        <td class="user-data-label">
+          Mandatory&nbsp;Fields&nbsp;(*)
+        </td>
+      </tr>
+      <tr>
         <td class="user-data-label">Number Sign*: </td>
         <td>
           <input value="<?php echo $car_numbersign ?? ''; ?>" class="text user-data-input" name="car_numbersign" type="text">
@@ -61,14 +69,12 @@
         <td class="user-data-label">Producer: </td>
         <td>
           <input value="<?php echo $car_producer ?? ''; ?>" class="text user-data-input" name="car_producer">
-          <p class="error-message"><?php echo $errors['producer'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Car Model: </td>
         <td>
           <input value="<?php echo $car_model ?? ''; ?>" class="text user-data-input" name="car_model" type="text">
-          <p class="error-message"><?php echo $errors['model'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
@@ -82,20 +88,18 @@
         <td class="user-data-label">Color: </td>
         <td>
           <input value="<?php echo $car_color ?? ''; ?>" class="text user-data-input" name="car_color">
-          <p class="error-message"><?php echo $errors['color'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Interior Material: </td>
         <td>
           <input value="<?php echo $car_interior ?? ''; ?>" class="text user-data-input" name="car_interior">
-          <p class="error-message"><?php echo $errors['interior'] ?? ''; ?></p>
         </td>
       </tr>
       <tr>
         <td class="user-data-label">Details: </td>
         <td>
-          <textarea placeholder="Write something here about your car that is worth knowing when we will work with your car." class="text user-data-input-textfield" name="car_details"></textarea>
+          <textarea placeholder="Write something here about your car that is worth knowing when we will work with your car." class="text user-data-input-textfield" name="car_details"><?php echo $car_details ?? ''; ?></textarea>
         </td>
       </tr>
     </table>

@@ -34,6 +34,13 @@
       if(validateEmail($the_email)){
         $errors["email"] = validateEmail($the_email);
       }
+      if ($the_email != $email) {
+        $check_email = "select * from users where user_email = '$the_email' ";
+        $check_email_query = mysqli_query($conn,$check_email);
+        if(mysqli_num_rows($check_email_query) != 0){
+          $errors["email"] = "Email already in use";
+        }
+      }
       if(validatenumberField($the_phone)){
         $errors["phone"] = validatenumberField($the_phone);
       }
@@ -77,6 +84,11 @@
 
   
     <table class="user-data-box">
+      <tr>
+        <td class="user-data-label">
+          Mandatory&nbsp;fields&nbsp;(*)
+        </td>
+      </tr>
       <tr>
         <td class="user-data-label">First Name*: </td> 
         <td>

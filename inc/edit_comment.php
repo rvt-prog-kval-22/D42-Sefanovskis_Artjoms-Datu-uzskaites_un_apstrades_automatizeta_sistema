@@ -92,7 +92,16 @@
       <tr>
         <td class="user-data-label">Comment Rating (1-5)*: </td>
         <td>
-          <input type="number" class="text rating-input" value="<?php echo $the_comment_rating ?? $comment_rating; ?>" name="comment_rating">
+        <div class="star-box">
+            <i class='far fa-star' id="star1" onclick="drawStars(0)"></i>
+            <i class='far fa-star' id="star2" onclick="drawStars(1)"></i>
+            <i class='far fa-star' id="star3" onclick="drawStars(2)"></i>
+            <i class='far fa-star' id="star4" onclick="drawStars(3)"></i>
+            <i class='far fa-star' id="star5" onclick="drawStars(4)"></i>
+          </div>
+
+          <input type="number" name="comment_rating" class="display-none" value="0" id="starInput">
+          
           <p class="error-message"><?php echo $errors['rating'] ?? '' ?></p>
         </td>
       </tr>
@@ -115,3 +124,45 @@
   <?php  
   }
 ?>
+
+<script type="text/javascript">
+/* /////////////////////////////// */
+/* Kods atbildīgs par zvaigznīšu strādāšanu rakstot atsauksmes
+/* /////////////////////////////// */
+
+let star1 = document.getElementById("star1");
+let star2 = document.getElementById("star2");
+let star3 = document.getElementById("star3");
+let star4 = document.getElementById("star4");
+let star5 = document.getElementById("star5");
+let starInput = document.getElementById("starInput");
+let stars = [star1, star2, star3, star4, star5];
+let isclicked = 0;
+let rating = 0;
+
+function clearStars() {
+  if (isclicked == 0) {
+    isclicked = 1;
+  } else {
+    for (let i = 0; i <= 4; i++) {
+      stars[i].classList.remove("fas");
+    }
+  }
+}
+
+function drawStars(theStar) {
+  rating = 0;
+  clearStars();
+  for (let i = 0; i <= theStar; i++) {
+    stars[i].classList.toggle("fas");
+    rating++;
+  }
+  starInput.value = rating;
+}
+<?php $the_rating = $comment_rating ?? 0;
+  if($the_rating != 0){
+    $the_rating--;
+    echo "drawStars($the_rating);";
+  }
+?>
+</script>

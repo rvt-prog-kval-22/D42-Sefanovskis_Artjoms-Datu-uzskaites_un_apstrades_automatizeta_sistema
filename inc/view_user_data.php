@@ -48,17 +48,12 @@
       <td><?php echo $phone_code; ?></td>
     </tr>
     <tr>
-      <td class="user-data-label">Password: </td>
-      <td class="password-row">
-        <span class="covered-password-box"><span class="password-output hidden"><?php echo $password; ?></span></span>
-        <button class="btn--password-vision">
-          <i class="fas fa-eye-slash password-hidden"></i>
-          <i class="fas fa-eye password-open hidden"></i>
-        </button>
-      </td>
+      <td><a href="profile.php?source=change_password" class="big-red-link">Change Password</a></td>
     </tr>
     <tr>
-      <td><a href="profile.php?source=change_password" class="change-password-link">Change Password</a></td>
+      <td>
+        <a href="profile.php?source=check_password" class="big-red-link">Delete profile</a>
+      </td>
     </tr>
   </table>
   <?php  
