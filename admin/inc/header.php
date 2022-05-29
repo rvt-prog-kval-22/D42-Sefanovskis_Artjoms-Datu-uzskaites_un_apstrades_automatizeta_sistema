@@ -3,6 +3,9 @@
   session_start();
   include '../inc/db.php';
   include '../inc/functions.php';
+  if(!isset($_SESSION['user_role']) or $_SESSION['user_role'] != 'admin'){
+    header("Location: ../home.php");
+  }
 ?> 
 
 <!DOCTYPE html>

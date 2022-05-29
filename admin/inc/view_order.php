@@ -196,7 +196,7 @@
       </tr>
       <tr>
         <td class="ver-table-label">End Price(£): </td>
-        <td><input class="ver-table-input" value="<?php if($order_end_price != 0){echo $order_end_price;}?>" type="number" name="order_end_price" class="user-data-input"></td>
+        <td><input class="ver-table-input" value="<?php if($order_end_price != 0){echo $order_end_price;}?>" name="order_end_price" class="user-data-input"></td>
       </tr>
       <tr>
         <td class="ver-table-label">Payment date: </td>
