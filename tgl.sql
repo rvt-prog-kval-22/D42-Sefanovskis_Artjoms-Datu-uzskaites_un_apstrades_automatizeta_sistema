@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2022 at 08:01 PM
+-- Generation Time: May 29, 2022 at 07:43 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -44,9 +44,11 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`car_id`, `car_owner_id`, `car_producer`, `car_model`, `car_number_sign`, `car_year`, `car_color`, `car_interior_material`, `car_details`) VALUES
-(1, 8, 'BMW', 'model 55', 'AA-1111', 2015, 'yellow', 'leather', 'Not mentioned'),
-(2, 8, 'Tesla', 'Model S', 'BB-2222', 2019, 'White', 'Synthetics', 'The rear passenger window on the left side has cracks.'),
-(4, 8, 'Volks Wagen', 'Golf 7', 'CC-3333', 2016, 'Grey', 'Synthetics', 'Not mentioned');
+(1, 8, 'BMW', 'model 5', 'AA-1111', 2015, 'yellow', 'leather', 'Not mentioned'),
+(2, 8, 'Tesla', 'Model S', 'BB-2222', 2020, 'White', 'Synthetics', 'The rear passenger window on the left side has cracks.'),
+(4, 8, 'Volks Wagen', 'Golf 7', 'CC-3333', 2016, 'Grey', 'Synthetics', 'Not mentioned'),
+(7, 13, 'asdf', 'asdf', 'LV-1234', 1234, 'asdf', 'asdf', ''),
+(8, 14, 'asdf', 'asdf', 'asdf', 123, 'asdf', 'asdf', '');
 
 -- --------------------------------------------------------
 
@@ -72,20 +74,24 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`comment_id`, `comment_topic_id`, `comment_user_id`, `comment_rating`, `comment_content`, `comment_date`, `comment_isanonyme`, `comment_status`) VALUES
 (2, 1, 1, 5, 'Some content', '2022-02-12', 1, 'approved'),
 (3, 1, 3, 4, 'asdfasfd', '2022-02-12', 1, 'approved'),
-(4, 1, 2, 4, 'aaaaaaaaaaaaa', '2022-02-12', 0, 'approved'),
 (5, 3, 3, 5, 'review', '2022-02-12', 0, 'approved'),
 (6, 1, 3, 3, 'This is some review', '2022-02-13', 0, 'approved'),
 (7, 1, 4, 5, 'Another review', '2022-02-13', 0, 'approved'),
-(8, 4, 2, 4, 'asdfffffffffffff', '2022-02-13', 0, 'approved'),
 (10, 3, 1, 1, 'aaaaaaaaaaa', '2022-02-13', 0, 'approved'),
 (11, 6, 1, 5, 'a', '2022-02-13', 0, 'approved'),
 (12, 3, 1, 3, 'aaaaaaaaaaaaaaaaa', '2022-02-14', 1, 'approved'),
 (22, 1, 4, 5, 'This is another one review', '2022-02-14', 1, 'approved'),
 (23, 3, 8, 5, '11111111111', '2022-03-03', 0, 'approved'),
-(24, 1, 8, 4, 'abc', '2022-03-02', 1, 'approved'),
+(24, 1, 8, 5, 'Very satisfied with the job. My car now realy shines like never before!', '2022-03-02', 1, 'approved'),
 (25, 1, 8, 5, 'aaa', '2022-03-29', 1, 'draft'),
-(27, 1, 8, 2, '1', '2022-03-03', 1, 'approved'),
-(28, 7, 8, 5, '', '2022-05-05', 0, 'approved');
+(27, 1, 8, 2, '', '2022-03-03', 1, 'approved'),
+(28, 7, 8, 5, '', '2022-05-05', 0, 'approved'),
+(29, 1, 13, 5, 'Nice job and great service', '2022-05-18', 0, 'approved'),
+(30, 3, 13, 2, 'sadasdf', '2022-05-18', 0, 'approved'),
+(31, 1, 8, 5, 'Mana atsauksme', '2022-05-21', 1, 'draft'),
+(45, 1, 8, 4, 'Some review', '2022-05-23', 1, 'draft'),
+(54, 1, 8, 5, 'Atsauksme', '2022-05-23', 1, 'draft'),
+(55, 3, 8, 5, 'Vēl viena atsauksme', '2022-05-23', 1, 'approved');
 
 -- --------------------------------------------------------
 
@@ -118,7 +124,7 @@ INSERT INTO `orders` (`order_id`, `order_user_id`, `order_service_id`, `order_ca
 (5, 8, 3, 4, '2022-02-24', '2022-02-24', 'completed', '2022-02-24', 550, '2022-03-30'),
 (6, 8, 4, 1, '2022-02-25', '2022-02-26', 'completed', '2022-03-01', 550, '2022-03-15'),
 (7, 8, 3, 5, '2022-03-01', '2022-03-02', 'Recieved', '0000-00-00', 0, '0000-00-00'),
-(8, 8, 3, 4, '2022-03-02', '2022-03-03', 'completed', '2022-03-22', 324, '2020-12-01'),
+(8, 8, 14, 4, '2022-03-02', '2022-03-03', 'completed', '2022-05-21', 324, '2022-05-21'),
 (9, 8, 3, 1, '2022-03-21', '2022-03-22', 'canceled', '0000-00-00', 0, '0000-00-00'),
 (10, 8, 11, 2, '2022-03-24', '2022-03-24', 'completed', '2022-02-23', 1023, '2021-03-01'),
 (11, 8, 3, 4, '2022-03-02', '2022-03-03', 'completed', '2022-03-22', 324, '2021-01-01'),
@@ -130,10 +136,13 @@ INSERT INTO `orders` (`order_id`, `order_user_id`, `order_service_id`, `order_ca
 (17, 8, 3, 0, '2022-04-21', '0000-00-00', 'Recieved', NULL, 0, NULL),
 (18, 8, 3, 0, '2022-04-21', '0000-00-00', 'Recieved', NULL, 0, NULL),
 (19, 8, 3, 1, '2022-04-21', '0000-00-00', 'Recieved', NULL, 0, NULL),
-(20, 8, 3, 1, '2022-04-22', '2022-04-22', 'Recieved', NULL, 0, NULL),
-(21, 8, 3, 1, '2022-04-22', '2022-04-22', 'Recieved', NULL, 0, NULL),
+(20, 8, 3, 1, '2022-04-22', '2022-04-22', 'completed', '2022-05-21', 500, '2022-05-21'),
+(21, 8, 13, 1, '2022-04-22', '2022-04-22', 'completed', '2022-05-21', 2000, '2022-05-21'),
 (22, 8, 3, 1, '2022-04-22', '2022-04-22', 'Recieved', NULL, 0, NULL),
-(23, 8, 3, 1, '2022-04-22', '2022-04-22', 'Recieved', NULL, 0, NULL);
+(23, 8, 3, 1, '2022-04-22', '2022-04-22', 'Recieved', NULL, 0, NULL),
+(24, 8, 11, 4, '2022-05-19', '2022-05-27', 'completed', '2022-05-21', 1100, '2022-05-21'),
+(25, 8, 3, 2, '2022-05-21', '2022-05-27', 'completed', '2022-05-20', 500, '2022-05-21'),
+(26, 8, 3, 4, '2022-05-23', '2022-05-23', 'completed', '2022-05-23', 450, '2022-05-23');
 
 -- --------------------------------------------------------
 
@@ -154,7 +163,8 @@ CREATE TABLE `order_report` (
 
 INSERT INTO `order_report` (`report_id`, `report_order_id`, `report_text`, `report_date`) VALUES
 (3, 6, 'Car was repaired.', '2022-02-28'),
-(6, 8, 'report', '2022-03-04');
+(6, 8, 'report', '2022-03-04'),
+(7, 25, 'The car was fully restored, but deeper scratches and bumps still remain.', '2022-05-23');
 
 -- --------------------------------------------------------
 
@@ -208,14 +218,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_first`, `user_last`, `user_email`, `user_phone`, `user_phone_code`, `user_role`, `user_password`) VALUES
-(1, 'Lorem', 'Ipsum', 'ipsum@mail.com', 23323232, 371, 'user', 'password'),
-(2, 'John', 'Doe', 'doe@mail.com', 89298292, 372, 'user', '1'),
+(1, 'Lorem', 'Ipsum', 'ipsum@mail.com', 23323232, 371, 'user', '1'),
 (3, 'Mary', 'Loe', 'loe@mail.com', 23984539, 373, 'admin', 'password'),
 (4, 'Garry', 'Goe', 'garry@mail.com', 12345678, 123, 'user', '11111111111111111111'),
-(7, 'Lorem', 'Ipsum', 'ipsum@mail.com', 23323232, 371, 'user', 'password'),
 (8, 'Joe', 'Man', 'j@mail.com', 111111, 1, 'admin', '1'),
 (9, 'Lo', 'Loen', 'l@mail.com', 12345678, 123, 'user', '1'),
-(12, 'asdf', 'asdf', 'asdf@s.com', 12, 2323423, 'user', '123456');
+(12, 'asdf', 'asdf', 'asdf@s.com', 12, 2323423, 'user', '123456'),
+(13, 'Ilona', 'asdf', '123@a.com', 123456789, 123, 'user', '123456'),
+(14, 'asdfasddf', 'asdfasdf', 'asdf@asdf.com', 123, 123, 'user', '123456');
 
 --
 -- Indexes for dumped tables
@@ -272,25 +282,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `order_report`
 --
 ALTER TABLE `order_report`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -302,7 +312,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
