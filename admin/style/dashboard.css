@@ -1,3 +1,7 @@
+.card-selection{
+    display: flex;
+    align-items: center;
+}
 .card-selection-list {
   list-style: none;
   display: grid;
