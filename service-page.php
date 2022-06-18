@@ -76,7 +76,7 @@
       </section>
 
       <section class="services-descriptoin-section">
-        <h3 class="service-header-h3">Descriptoin</h3>
+        <h3 class="service-header-h3">Description</h3>
         <div class="text services-description">
           <p ><?php echo $service_description; ?></p>
         </div>
