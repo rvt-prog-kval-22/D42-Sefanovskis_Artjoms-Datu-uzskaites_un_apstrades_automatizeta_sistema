@@ -21,10 +21,10 @@ function displayStars($rating)
 function displayLinks(){
   if(isset($_SESSION['user_id'])){
     echo "<li><a class='main-nav-link' href='profile.php'>Profile</a></li>";
-    echo "<li><a class='main-nav-link main-nav-link-last' href='inc/logout.php'>Log-Out</a></li>";
     if($_SESSION['user_role'] == 'admin'){
       echo "<li><a class='main-nav-link' href='admin/index.php'>Admin</a></li>";
     }
+    echo "<li><a class='main-nav-link main-nav-link-last' href='inc/logout.php'>Log-Out</a></li>";
   }
   else{
     echo "<li><a class='main-nav-link' href='login.php'>Log-In</a></li>";
