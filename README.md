@@ -31,8 +31,8 @@ Projektā tiek izmantots:
 
 ## Uzstādīšanas instrukcijas
 Lai piekļūtu pie strādājoša projekta sekojiet saitei: [Šeit](https://kvaldarbstgl.000webhostapp.com/) - https://ieej.lv/sefanovskis
-1. Administratora dati: epasts- j@mail.com parole - 1
-2. Lietotāja dati: l@mail.com parole - 1.
+1. Administratora dati: e-pasts - j@mail.com parole - 1
+2. Lietotāja dati: e-pasts - l@mail.com parole - 1
 
 Dotajos profilos parole ir iestatīta izņēmuma kārtā, lai būtu ērtāk un ātrāk piekļūt pie profiliem.
 
